@@ -1,1 +1,7 @@
-console.log('__dirname', __dirname)
+// console.log('__dirname : The directory name of the current module. ', __dirname)
+// console.log('__filename : The file name of the current module.', __filename)
+let calculator = require('./Module')
+console.log(calculator.sum(10, 20))
+console.log(calculator.sub(20, 10))
+console.log(calculator.mul(10, 20))
+console.log(calculator.div(50, 25))
