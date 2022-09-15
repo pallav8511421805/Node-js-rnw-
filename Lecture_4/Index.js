@@ -1,5 +1,5 @@
 const fs = require('fs')
-const filedata = fs.createReadStream('Text1.txt')
+const filedata = fs.createReadStream('Text.txt')
 filedata.on('data',(data)=>{
     console.log('File : ' ,data.toString())
 })
