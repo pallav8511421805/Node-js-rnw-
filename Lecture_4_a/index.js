@@ -1,10 +1,6 @@
-const fs = require('fs')
-const filedata = fs.createReadStream('data.html')
-filedata.on('data',(data)=>{
-    const http = require('http')
-const api = http.createServer(function (req,res) {
-console.log('Hello')
-res.end(data.toString());
-})
+const http = require('http')
+let api = http.createServer(function (req,res) {
+res.end(`<html><body><h1>
+Hello</h1></body></html>`);
 })
 api.listen(3000)
