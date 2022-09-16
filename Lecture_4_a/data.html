@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="css/style.css" type="text/css"/> -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Twinkle+Star&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+}
+
+body, a {
+  font-family: "Kalam", cursive;
+  background: -webkit-gradient(linear, left top, right top, from(#ff00ff), color-stop(50%, #0011ff), to(#00e7e7));
+  background: linear-gradient(to right, #ff00ff 0%, #0011ff 50%, #00e7e7 100%);
+}
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+}
+
+.box {
+  width: 400px;
+  -webkit-box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+          box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  margin: 50px auto;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.box h1 {
+  text-align: center;
+  padding: 15px 0;
+  color: #ffffff;
+  font-family: "Twinkle Star", cursive;
+}
+
+.box p {
+  text-indent: 50px;
+  text-align: justify;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.box .btn a {
+  -webkit-box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
+  padding: 7px 15px;
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+  display: inline-block;
+  margin-top: 5px;
+  border-radius: 100px;
+  overflow: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.box .btn:hover a {
+  letter-spacing: 3px;
+}
+
+.box .btn a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0.15)), to(transparent));
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+  -webkit-transform: skewX(45deg) translateX(0);
+          transform: skewX(45deg) translateX(0);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.box .btn:hover a::before {
+  -webkit-transform: skewX(45deg) translateX(200%);
+          transform: skewX(45deg) translateX(200%);
+}
+
+.box .btn {
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
+    </style>
+</head>
+<body>
+
+   <section>
+       <div class="container">
+       <div class="box">
+          <h1>What is Lorem Ipsum?</h1>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <div class="btn">
+            <a href="#">Read More</a>
+            </div>
+       </div>
+       </div>
+   </section> 
+    
+</body>
+</html>
