@@ -1,8 +1,10 @@
 const http = require("http");
 const fs = require("fs");
 function Homepage(req, res) {
-  fs.readFile("Home.html", function (err, data) {
-    res.writeHead(200, { "content-type": "text/html" });
+  fs.readFile("index.html", function (err, data) {
+    res.writeHead(200, {
+      "Content-Type": "text/html",
+    });
     res.write(data);
     res.end();
   });
