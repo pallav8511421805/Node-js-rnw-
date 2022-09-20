@@ -13,11 +13,11 @@ function defaultpage(req, res) {
     }
   });
 }
-let api = http.createServer(function (req, res) {
+let app = http.createServer(function (req, res) {
   switch (req.url) {
     default:
       defaultpage(req, res);
       break;
   }
 });
-api.listen(3001);
+app.listen(3001);
