@@ -10,10 +10,28 @@
   margin: auto;
 }
 body {
-  background-color: #bababa;
+  background-color: #1e1f21;
   font-family: "Lexend", sans-serif;
+}
+.height {
+  height: 100%;
 }
 .row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+}
+.box {
+  width: 50%;
+  height: auto;
+  padding: 25px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: 5px 10px 0 #00459f;
+}
+.w100 {
+  width: 100%;
 }
