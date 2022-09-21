@@ -1,5 +1,6 @@
 const http = require("http");
 const fs = require("fs");
+const qs = require("qs");
 function homepage(req, res) {
   fs.readFile("index.html", function (err, data) {
     if (err) {
@@ -26,10 +27,47 @@ function defaultpage(req, res) {
     }
   });
 }
+function createpage(req, res) {
+  if (req.method == "post") {
+    var body = "";
+    req.on("data", function (data) {
+      body += data;
+    });
+    req.on("end", function () {
+      var post = qs.parse(body);
+      fs.readFile("data.json", (error, data) => {
+        var output = [];
+        if (!error) {
+          output = JSON.parse(data);
+        }
+        output.push(post);
+        fs.writeFile("data.json", JSON.stringify(output), (e, data) => {
+          console.log("Error", e);
+          console.log("Data", data);
+        });
+      });
+    });
+    res.end();
+  }
+  // fs.readFile(__dirname + req.url, function (err, data) {
+  //   if (err) {
+  //     res.writeHead(404);
+  //     res.write(err.toString());
+  //     res.end();
+  //   } else {
+  //     res.writeHead(200);
+  //     res.write(data);
+  //     res.end();
+  //   }
+  // });
+}
 let app = http.createServer(function (req, res) {
   switch (req.url) {
     case "/":
       homepage(req, res);
+      break;
+    case "/create":
+      createpage(req, res);
       break;
     default:
       defaultpage(req, res);
