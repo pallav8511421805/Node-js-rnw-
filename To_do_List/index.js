@@ -47,19 +47,8 @@ function createpage(req, res) {
         });
       });
     });
-    res.end();
   }
-  // fs.readFile(__dirname + req.url, function (err, data) {
-  //   if (err) {
-  //     res.writeHead(404);
-  //     res.write(err.toString());
-  //     res.end();
-  //   } else {
-  //     res.writeHead(200);
-  //     res.write(data);
-  //     res.end();
-  //   }
-  // });
+  res.end();
 }
 let app = http.createServer(function (req, res) {
   switch (req.url) {
