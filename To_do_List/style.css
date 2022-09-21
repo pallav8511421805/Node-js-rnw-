@@ -35,3 +35,51 @@ body {
 .w100 {
   width: 100%;
 }
+.h1 {
+  color: #1e1f21;
+  text-align: center;
+  font-size: 40px;
+}
+.input {
+  color: #1e1f21;
+  width: 80%;
+  height: 40px;
+  background-color: white;
+  border: 2px solid #00459f;
+  text-indent: 20px;
+  font-family: "Lexend", sans-serif;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+::placeholder {
+  color: #00459f;
+  font-family: "Lexend", sans-serif;
+  font-size: 16px;
+}
+.btn {
+  color: white;
+  width: 20%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  background-color: #00459f;
+  border: 2px solid #00459f;
+  border-radius: 10px;
+  font-family: "Lexend", sans-serif;
+  margin: 5px 0;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.5s;
+}
+.btn:hover {
+  background-color: transparent;
+  border: 2px solid #00459f;
+  color: #00459f;
+}
+.center {
+  justify-content: center;
+  display: flex;
+}
+.mg {
+  margin: 20px 0;
+}
