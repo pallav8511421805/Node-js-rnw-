@@ -1,6 +1,6 @@
 const http = require("http");
 const fs = require("fs");
-const qs = require("qs");
+const qs = require("querystring");
 function homepage(req, res) {
   fs.readFile("index.html", function (err, data) {
     if (err) {
