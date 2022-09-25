@@ -7,11 +7,27 @@ function homepage(req, res) {
       res.writeHead(404);
       res.write(err.toString());
       res.end();
-    } else {
-      res.writeHead(200, { "content-type": "text/html" });
-      res.write(data);
-      res.end();
+      return;
     }
+    fs.readFile("data.json", function (e, d) {
+      let output = "";
+      if (d) {
+        const task = JSON.parse(d);
+        for (let t of task) {
+          console.log(task);
+          output += `<tr>`;
+          output += `<td>${t.name}</td>`;
+          output += `<td>${t.age}</td>`;
+          output += `<td>${t.status}</td>`;
+          output += `</tr>`;
+        }
+      }
+      let html = data.toString();
+      html = html.replace("#data#", output);
+      res.writeHead(200);
+      res.write(html);
+      res.end();
+    });
   });
 }
 function defaultpage(req, res) {
@@ -45,6 +61,7 @@ function createpage(req, res) {
       });
     });
   }
+  res.writeHead("302", { Location: "/" });
   res.end();
 }
 let app = http.createServer(function (req, res) {
