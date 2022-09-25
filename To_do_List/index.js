@@ -28,7 +28,7 @@ function defaultpage(req, res) {
   });
 }
 function createpage(req, res) {
-  if (req.method == "post") {
+  if (req.method == "POST") {
     var body = [];
     req.on("data", function (data) {
       body += data;
