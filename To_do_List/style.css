@@ -83,3 +83,20 @@ body {
 .mg {
   margin: 20px 0;
 }
+
+table {
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+  height: auto;
+}
+table tr th {
+  height: 30px;
+  font-size: 18px;
+  color: #1e1f21;
+}
+table tr td {
+  height: 30px;
+  font-size: 16px;
+  color: #00459f;
+}
