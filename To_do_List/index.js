@@ -41,10 +41,7 @@ function createpage(req, res) {
           output = JSON.parse(data);
         }
         output.push(post);
-        fs.writeFile("data.json", JSON.stringify(output), (e, data) => {
-          console.log("Error", e);
-          console.log("Data", data);
-        });
+        fs.writeFile("data.json", JSON.stringify(output), (e, data) => {});
       });
     });
   }
