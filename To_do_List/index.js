@@ -14,7 +14,6 @@ function homepage(req, res) {
       if (d) {
         const task = JSON.parse(d);
         for (let t of task) {
-          console.log(task);
           output += `<tr>`;
           output += `<td>${t.name}</td>`;
           output += `<td>${t.age}</td>`;
