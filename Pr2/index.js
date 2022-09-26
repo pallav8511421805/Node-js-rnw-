@@ -43,18 +43,4 @@ app.get("/t", (req, res) => {
   });
 });
 
-app.get("/css", (req, res) => {
-  fs.readFile(__dirname + req.url, function (err, data) {
-    if (err) {
-      res.writeHead(404);
-      res.write(err.toString());
-      res.end();
-    } else {
-      res.writeHead(200);
-      res.write(data);
-      res.end();
-    }
-  });
-});
-
 app.listen(port);
