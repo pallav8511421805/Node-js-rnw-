@@ -1,74 +1,62 @@
-// const http = require("http");
-// const fs = require("fs");
-// function workpage(req, res) {
-//   fs.readFile("work.html", function (err, data) {
-//     res.writeHead(200, { "content-type": "text/html" });
-//     res.write(data);
-//     res.end();
-//   });
-// }
-// function work1page(req, res) {
-//   fs.readFile("work1.html", function (err, data) {
-//     res.writeHead(200, { "content-type": "text/html" });
-//     res.write(data);
-//     res.end();
-//   });
-// }
-// function homepage(req, res) {
-//   fs.readFile("index.html", function (err, data) {
-//     res.writeHead(200, { "content-type": "text/html" });
-//     res.write(data);
-//     res.end();
-//   });
-// }
-// function teampage(req, res) {
-//   fs.readFile("team.html", function (err, data) {
-//     res.writeHead(200, { "content-type": "text/html" });
-//     res.write(data);
-//     res.end();
-//   });
-// }
-// function blogpage(req, res) {
-//   fs.readFile("blog.html", function (err, data) {
-//     res.writeHead(200, { "content-type": "text/html" });
-//     res.write(data);
-//     res.end();
-//   });
-// }
-// function defaultpage(req, res) {
-//   fs.readFile(__dirname + req.url, function (err, data) {
-//     if (err) {
-//       res.writeHead(404);
-//       res.write(err.toString());
-//       res.end();
-//     } else {
-//       res.writeHead(200);
-//       res.write(data);
-//       res.end();
-//     }
-//   });
-// }
-// let app = http.createServer(function (req, res) {
-//   switch (req.url) {
-//     case "/":
-//       homepage(req, res);
-//       break;
-//     case "/w":
-//       workpage(req, res);
-//       break;
-//     case "/t":
-//       teampage(req, res);
-//       break;
-//     case "/w1":
-//       work1page(req, res);
-//       break;
-//     case "/b":
-//       blogpage(req, res);
-//       break;
-//     default:
-//       defaultpage(req, res);
-//       break;
-//   }
-// });
-// app.listen(8000);
+const express = require("express");
+const app = express();
+const port = 3000;
+const fs = require("fs");
 
+app.get("/", (req, res) => {
+  fs.readFile("index.html", (err, data) => {
+    res.writeHead(200, { "content-type": "text/html" });
+    res.write(data);
+    res.end();
+  });
+});
+
+app.get("/w1", (req, res) => {
+  fs.readFile("work1.html", (err, data) => {
+    res.writeHead(200, { "content-type": "text/html" });
+    res.write(data);
+    res.end();
+  });
+});
+
+app.get("/w", (req, res) => {
+  fs.readFile("work.html", (err, data) => {
+    res.writeHead(200, { "content-type": "text/html" });
+    res.write(data);
+    res.end();
+  });
+});
+
+app.get("/b", (req, res) => {
+  fs.readFile("blog.html", (err, data) => {
+    res.writeHead(200, { "content-type": "text/html" });
+    res.write(data);
+    res.end();
+  });
+});
+
+app.get("/t", (req, res) => {
+  fs.readFile("team.html", (err, data) => {
+    res.writeHead(200, { "content-type": "text/html" });
+    res.write(data);
+    res.end();
+  });
+});
+
+function defaultpage(req, res) {
+  fs.readFile(__dirname + req.url, function (err, data) {
+    if (err) {
+      res.writeHead(404);
+      res.write(err.toString());
+      res.end();
+    } else {
+      res.writeHead(200);
+      res.write(data);
+      res.end();
+    }
+  });
+}
+
+defaultpage(req, res);
+
+app.listen(port);
