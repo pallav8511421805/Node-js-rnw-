@@ -43,7 +43,7 @@ app.get("/t", (req, res) => {
   });
 });
 
-function defaultpage(req, res) {
+app.get("/css", (req, res) => {
   fs.readFile(__dirname + req.url, function (err, data) {
     if (err) {
       res.writeHead(404);
@@ -55,8 +55,6 @@ function defaultpage(req, res) {
       res.end();
     }
   });
-}
-
-defaultpage(req, res);
+});
 
 app.listen(port);
