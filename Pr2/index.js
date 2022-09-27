@@ -1,16 +1,11 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const fs = require("fs");
 
 app.use(express.static("public"));
-
+app.set("view engine", "ejs");
 app.get("/", (req, res) => {
-  fs.readFile("index.html", (err, data) => {
-    res.writeHead(200, { "content-type": "text/html" });
-    res.write(data);
-    res.end();
-  });
+  res.render("index");
 });
 
 app.get("/w1", (req, res) => {
@@ -45,4 +40,6 @@ app.get("/t", (req, res) => {
   });
 });
 
-app.listen(port);
+app.listen(port, () => {
+  console.log();
+});
