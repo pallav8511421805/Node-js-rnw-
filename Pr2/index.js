@@ -3,6 +3,8 @@ const app = express();
 const port = 3000;
 const fs = require("fs");
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
   fs.readFile("index.html", (err, data) => {
     res.writeHead(200, { "content-type": "text/html" });
