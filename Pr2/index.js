@@ -4,42 +4,29 @@ const port = 3000;
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+
+const title = "Starty";
+
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", { title: title });
 });
 
 app.get("/w1", (req, res) => {
-  fs.readFile("work1.html", (err, data) => {
-    res.writeHead(200, { "content-type": "text/html" });
-    res.write(data);
-    res.end();
-  });
+  res.render("work1", { title: title });
 });
 
 app.get("/w", (req, res) => {
-  fs.readFile("work.html", (err, data) => {
-    res.writeHead(200, { "content-type": "text/html" });
-    res.write(data);
-    res.end();
-  });
+  res.render("work", { title: title });
 });
 
 app.get("/b", (req, res) => {
-  fs.readFile("blog.html", (err, data) => {
-    res.writeHead(200, { "content-type": "text/html" });
-    res.write(data);
-    res.end();
-  });
+  res.render("blog", { title: title });
 });
 
 app.get("/t", (req, res) => {
-  fs.readFile("team.html", (err, data) => {
-    res.writeHead(200, { "content-type": "text/html" });
-    res.write(data);
-    res.end();
-  });
+  res.render("team", { title: title });
 });
 
 app.listen(port, () => {
-  console.log();
+  console.log(`http://localhost:${port}`);
 });
