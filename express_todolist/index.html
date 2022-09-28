@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="row ">
+                <div class="box">
+                    <div class="w100">
+                        <h1 class="h1">TO DO LIST</h1>
+                        <form action="/create" method="post" class="mg">
+                            <div class="center">
+                                <input type="text" name="name" placeholder="Enter your name" class='input'/>
+                            </div>
+                            <div class="center">
+                                <input type="text" name="age" placeholder="Enter your age" class='input'/>
+                            </div>
+                            <div class="center">
+                                <input type="text" name="status" placeholder="Enter your status" class='input'/>
+                            </div>
+                            <div class="center">
+                                <input type="submit" value="Submit" class='btn'/>
+                            </div>
+                        </form>
+                        <table>
+                          <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Status</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            #data#
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
