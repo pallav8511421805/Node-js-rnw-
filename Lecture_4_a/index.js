@@ -6,6 +6,7 @@ app.set("view engine", "ejs");
 app.get("/", (req, res) => {
   res.render("Home");
 });
+// app.use thi middle ware use thay
 app.use((req, res, next) => {
   if (req.url === "/a") {
     res.redirect("/");
