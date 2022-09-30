@@ -11,19 +11,19 @@ app.get("/", (req, res) => {
   res.render("index", { title: title });
 });
 
-app.get("/w1", (req, res) => {
+app.get("/work", (req, res) => {
   res.render("work1", { title: title });
 });
 
-app.get("/w", (req, res) => {
+app.get("/Work", (req, res) => {
   res.render("work", { title: title });
 });
 
-app.get("/b", (req, res) => {
+app.get("/blog", (req, res) => {
   res.render("blog", { title: title });
 });
 
-app.get("/t", (req, res) => {
+app.get("/team", (req, res) => {
   res.render("team", { title: title });
 });
 
