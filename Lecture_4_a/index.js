@@ -3,5 +3,19 @@ const fs = require("fs");
 const express = require("express");
 const app = express();
 app.set("view engine", "ejs");
+app.get("/", (req, res) => {
+  res.render("Home");
+});
+app.use((req, res, next) => {
+  if (req.url === "/a") {
+    res.redirect("/");
+    console.log("middlewarwe");
+  } else {
+    next();
+  }
+});
+app.get("/a", (req, res) => {
+  res.render("About");
+});
 
-api.listen(3001);
+app.listen(3001);
