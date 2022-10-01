@@ -2,11 +2,12 @@ const express = require("express");
 const fs = require("fs");
 const app = express();
 const port = 3000;
-
-app.use(express.static("public"));
+const options = {
+  index: false,
+};
+app.use(express.static("public", options));
 app.set("view engine", "ejs");
 app.get("/", (req, res) => {
-  res.render("index");
   fs.readFile("data.json", function (e, d) {
     let output = "";
     if (d) {
@@ -19,11 +20,7 @@ app.get("/", (req, res) => {
         output += `</tr>`;
       }
     }
-    let html = data.toString();
-    html = html.replace("#data#", output);
-    res.writeHead(200);
-    res.write(html);
-    res.end();
+    res.render("index", { opt: output });
   });
 });
 
@@ -44,9 +41,8 @@ app.get("/create", (req, res) => {
         fs.writeFile("data.json", JSON.stringify(output), (e, data) => {});
       });
     });
+    res.redirect("/");
   }
-  res.writeHead("302", { Location: "/" });
-  res.end();
 });
 
 app.listen(port, () => {
