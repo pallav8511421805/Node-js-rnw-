@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        function handledelete() {
+         alert(newitem)
+        }
+    </script>
 </head>
 <body>
     <section>
@@ -34,8 +39,7 @@
                                 <th>Name</th>
                                 <th>Age</th>
                                 <th>Status</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
+                                <th colspan="2">Actions</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -44,8 +48,8 @@
                                     <td><%= d.Name %></td>
                                     <td><%= d.Age %></td>
                                     <td><%= d.Status %></td>
-                                    <td>Edit</td>
-                                    <td>Delete</td>
+                                    <td><div>EDIT</div></td>
+                                    <td><div onclick="handledelete()">DELETE</div></td>
                                 </tr>
                               <% }); %>
                           </tbody>
