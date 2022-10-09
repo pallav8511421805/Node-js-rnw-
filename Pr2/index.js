@@ -11,10 +11,12 @@ const title = "Starty";
 
 mongoose.connect('mongodb://localhost:27017/demo1');
 
-const Cat = mongoose.model('Cat', { name: String });
+const Cat = mongoose.model('Cat', { name: String ,age:Number});
 
-const kitty = new Cat({ name: 'Zildjian' });
-kitty.save().then(() => console.log('meow'));
+const kitty = new Cat({ name: 'ket',age:26 });
+
+kitty.save().then((res) => {console.log("res",res)}
+).catch((e)=>console.log("error",e))
 
 app.get("/", (req, res) => {
   res.render("index", { title: title });
