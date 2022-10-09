@@ -1,11 +1,20 @@
 const express = require("express");
+const mongoose = require('mongoose');
 const app = express();
 const port = 3000;
 
 app.use(express.static("public"));
+
 app.set("view engine", "ejs");
 
 const title = "Starty";
+
+mongoose.connect('mongodb://localhost:27017/demo1');
+
+const Cat = mongoose.model('Cat', { name: String });
+
+const kitty = new Cat({ name: 'Zildjian' });
+kitty.save().then(() => console.log('meow'));
 
 app.get("/", (req, res) => {
   res.render("index", { title: title });
