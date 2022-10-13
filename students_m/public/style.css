@@ -21,6 +21,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .box {
   width: 50%;
   height: auto;
