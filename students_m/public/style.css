@@ -152,3 +152,40 @@ table tr td {
 .divmg{
   margin: 15px 0;
 }
+.center1{
+  text-indent: 85px;
+}
+.input1 {
+  color: #1e1f21;
+  font-size: 18px !important;
+  margin: 0 5px;
+}
+input[type='radio']:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: white;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  transition: all 0.5s;
+  border: 2px solid #00459f;
+}
+
+input[type='radio']:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #00459f;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid #00459f;
+  transition: all 0.5s;
+}
