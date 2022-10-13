@@ -42,7 +42,6 @@ app.post("/edit", async (req, res) => {
 
 app.get("/delete", async (req, res) => {
   const result = await User.deleteOne({ _id: req.query.id });
-  console.log("result", result);
   res.redirect('/');
 })
 
