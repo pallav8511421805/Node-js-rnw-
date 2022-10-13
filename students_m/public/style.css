@@ -141,3 +141,13 @@ table tr td {
   display: flex;
   justify-content: center;
 }
+.h2{
+  color: #1e1f21;
+  font-size: 20px;
+  text-indent: 85px;
+  display: block;
+  margin: 5px 0;
+}
+.divmg{
+  margin: 15px 0;
+}
