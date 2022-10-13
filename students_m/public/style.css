@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1140px;
+  margin: auto;
+}
+body {
+  background-color: #1e1f21;
+  font-family: "Lexend", sans-serif;
+}
+.height {
+  height: 100%;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.box {
+  width: 50%;
+  height: auto;
+  padding: 25px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: 5px 10px 0 #00459f;
+}
+.w100 {
+  width: 100%;
+}
+.h1 {
+  color: #1e1f21;
+  text-align: center;
+  font-size: 40px;
+}
+.input {
+  color: #1e1f21;
+  width: 80%;
+  height: 40px;
+  background-color: white;
+  border: 2px solid #00459f;
+  text-indent: 20px;
+  font-family: "Lexend", sans-serif;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+::placeholder {
+  color: #1e1f21;
+  font-family: "Lexend", sans-serif;
+  font-size: 14px;
+}
+.btn {
+  color: white;
+  width: 20%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  background-color: #00459f;
+  border: 2px solid #00459f;
+  border-radius: 10px;
+  font-family: "Lexend", sans-serif;
+  margin: 5px 0;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.5s;
+}
+.btn:hover {
+  background-color: transparent;
+  border: 2px solid #00459f;
+  color: #00459f;
+}
+.center {
+  justify-content: center;
+  display: flex;
+}
+.mg {
+  margin: 20px 0;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+  height: auto;
+}
+table tr th {
+  height: 30px;
+  font-size: 18px;
+  color: #1e1f21;
+}
+table tr td {
+  height: 30px;
+  font-size: 16px;
+  color: #00459f;
+}
+.atag {
+  width: 150px !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  text-decoration: none !important;
+  color: white !important;
+  font-size: 20px !important;
+  background-color: #00459f !important;
+  border: 2px solid #00459f !important;
+  border-radius: 10px !important;
+  font-family: "Lexend", sans-serif !important;
+  margin: 25px 0 !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  transition: all 0.5s !important;
+}
+.atag:hover {
+  background-color: transparent !important;
+  border: 2px solid #00459f !important;
+  color: #00459f !important;
+}
+.btnaction {
+  background-color: transparent;
+  color: #00459f ;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius:50px;
+  text-align: center;
+  line-height: 50px;
+  border: 2px solid #00459f;
+  transition: all 0.5s;
+}
+.btnaction:hover {
+  color: white;
+  background-color: #00459f;
+}
+.textcenter{
+  display: flex;
+  justify-content: center;
+}
