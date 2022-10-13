@@ -17,8 +17,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
 
 app.get('/', async function (req, res) {
-    const user = await Students.find()
-    res.render('index',{ data : user})
+    const Student = await Students.find()
+    res.render('index',{ data : Student})
   })
 
 app.get('/create', function (req, res) {
@@ -26,14 +26,14 @@ app.get('/create', function (req, res) {
   })
   
 app.post('/create', async function (req, res) {
-      const user = new Students(req.body)
-      await user.save();
+      const Student = new Students(req.body)
+      await Student.save();
       res.redirect('/')
 })
 
 app.get('/edit', async (req, res) => {
-  const user = await Students.findById(req.query.id);
-  res.render('edit', { users: user });
+  const Student = await Students.findById(req.query.id);
+  res.render('edit', { Students: Student });
 });
 app.post("/edit", async (req, res) => {
   await Students.updateOne({ _id: req.query.id }, { $set: req.body });
