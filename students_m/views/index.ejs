@@ -25,18 +25,20 @@
                                 <th>No.</th>
                                 <th>Name</th>
                                 <th>Age</th>
-                                <th>Status</th>
+                                <th>Father's name</th>
+                                <th>Mother's name</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
                           </thead>
                           <tbody>
-                            <% if(data){ let i=1; for(user of data) { %>
+                            <% if(data){ let i=1; for(stu of data) { %>
                               <tr>
                                 <td><%= i %></td>
-                                <td><%= user.name %></td>
-                                <td><%= user.age %></td>
-                                <td><%= user.fname %></td>
+                                <td><%= stu.name %></td>
+                                <td><%= stu.age %></td>
+                                <td><%= stu.fname %></td>
+                                <td><%= stu.mname %></td>
                                 <td><div class="textcenter"><a href="<%= `/edit?id=${user.id}` %>"><div class="btnaction"><i class="fa-solid fa-pencil"></i></div></a></div></td>
                                 <td><div class="textcenter"><a href="<%= `/delete?id=${user.id}` %>"><div class="btnaction"><i class="fa-solid fa-trash-can"></i></div></a></div></td>
                               </tr>
