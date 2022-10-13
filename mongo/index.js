@@ -31,6 +31,21 @@ app.post('/create', async function (req, res) {
       res.redirect('/')
 })
 
+app.get('/edit', async (req, res) => {
+  const user = await User.findById(req.query.id);
+  res.render('edit', { users: user });
+});
+app.post("/edit", async (req, res) => {
+  await User.updateOne({ _id: req.query.id }, { $set: req.body });
+  res.redirect('/');
+});
+
+app.get("/delete", async (req, res) => {
+  const result = await User.deleteOne({ _id: req.query.id });
+  console.log("result", result);
+  res.redirect('/');
+})
+
 app.listen(port,()=>{
     console.log(`http://localhost:${port}/`)
 })

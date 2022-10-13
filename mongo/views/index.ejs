@@ -37,8 +37,8 @@
                                 <td><%= user.name %></td>
                                 <td><%= user.age %></td>
                                 <td><%= user.status %></td>
-                                <td><button class="btnaction"><i class="fa-solid fa-pencil"></i></button></td>
-                                <td><button class="btnaction"><i class="fa-solid fa-trash-can"></i></button></td>
+                                <td><a href="<%= `/edit?id=${user.id}` %>" class="btnaction"><i class="fa-solid fa-pencil"></i></a></td>
+                                <td><a href="<%= `/delete?id=${user.id}` %>" class="btnaction"><i class="fa-solid fa-trash-can"></i></a></td>
                               </tr>
                                 <% i++; } } %>
                           </tbody>
