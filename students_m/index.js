@@ -3,8 +3,8 @@ const app = express()
 const mongoose = require('mongoose');
 const port = 3000;
 const bodyParser = require("body-parser");
-const User = require("./modules/user");
-mongoose.connect('mongodb://localhost:27017/user');
+const Students = require("./modules/students");
+mongoose.connect('mongodb://localhost:27017/school');
 
 app.set("view engine" ,"ejs")
 
@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
 
 app.get('/', async function (req, res) {
-    const user = await User.find()
+    const user = await Students.find()
     res.render('index',{ data : user})
   })
 
@@ -26,22 +26,22 @@ app.get('/create', function (req, res) {
   })
   
 app.post('/create', async function (req, res) {
-      const user = new User(req.body)
+      const user = new Students(req.body)
       await user.save();
       res.redirect('/')
 })
 
 app.get('/edit', async (req, res) => {
-  const user = await User.findById(req.query.id);
+  const user = await Students.findById(req.query.id);
   res.render('edit', { users: user });
 });
 app.post("/edit", async (req, res) => {
-  await User.updateOne({ _id: req.query.id }, { $set: req.body });
+  await Students.updateOne({ _id: req.query.id }, { $set: req.body });
   res.redirect('/');
 });
 
 app.get("/delete", async (req, res) => {
-  const result = await User.deleteOne({ _id: req.query.id });
+  const result = await Students.deleteOne({ _id: req.query.id });
   res.redirect('/');
 })
 
