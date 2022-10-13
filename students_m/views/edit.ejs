@@ -15,15 +15,49 @@
                     <div class="w100">
                         <h1 class="h1">Edit student data</h1>
                         <form method="post" class="mg">
-                            <div class="center">
-                                <input type="text" name="name" placeholder="Enter your name" class='input' value="<%= Students.name %>"/>
+                            <div class="divmg">
+                                <label class="h2">Full name</label>
+                                <div class="center">
+                                    <input type="text" name="name" placeholder="Enter your full name" class='input' value="<%= Students.name %>"/>
+                                </div>
                             </div>
-                            <div class="center">
-                                <input type="text" name="age" placeholder="Enter your age" class='input' value="<%= Students.age %>"/>
-                            </div>
-                            <div class="center">
-                                <input type="text" name="status" placeholder="Enter your status" class='input' value="<%= Students.status %>"/>
-                            </div>
+    
+                            <div class="divmg">
+                                <label class="h2">Age</label>
+                                <div class="center">
+                                    <input type="text" name="age" placeholder="Enter your age" class='input' value="<%= Students.age %>"/>
+                                </div>
+                                </div>
+    
+                                <div class="divmg">
+                                <label class="h2">Father's name</label>
+                                <div class="center">
+                                    <input type="text" name="fname" placeholder="Enter your father's name" class='input' value="<%= Students.fname %>"/>
+                                </div>
+                                </div>
+    
+                                <div class="divmg">
+                                    <label class="h2">Mother's name</label>
+                                    <div class="center">
+                                        <input type="text" name="mname" placeholder="Enter your mother's name" value="<%= Students.mname %>" class='input'/>
+                                    </div>
+                                    </div>
+    
+                                    <div class="divmg">
+                                        <label class="h2">Father's mobile number</label>
+                                        <div class="center">
+                                            <input type="text" name="fphone" placeholder="Enter your father's mobile number" value="<%= Students.fphone %>" class='input' maxlength="10"/>
+                                        </div>
+                                        </div>
+    
+                                        <div class="divmg">
+                                            <label class="h2">Gender</label>
+                                            <div class="center1">
+                                                <input type="radio" name="gender"/> <span class='input1'>Male</span>
+                                                <input type="radio" name="gender"/> <span class='input1'>Female</span>
+                                            </div>
+                                            </div>
+                           
                             <div class="center">
                                 <input type="submit" value="Update" class='btn'/>
                             </div>
