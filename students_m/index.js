@@ -3,6 +3,7 @@ const app = express()
 const mongoose = require('mongoose');
 const port = 3000;
 const bodyParser = require("body-parser");
+const fs = require("fs");
 const multer = require("multer");
 const Students = require("./modules/students");
 mongoose.connect('mongodb://localhost:27017/school');
@@ -15,11 +16,12 @@ const options = {
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, '/public/uploads')
+    cb(null, __dirname + '/public/uploads')
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-    cb(null, file.fieldname + '-' + uniqueSuffix)
+    const orgname = file.originalname;
+    cb(null, file.fieldname + '-' + uniqueSuffix + orgname.substring(orgname.lastIndexOf("."),orgname.length))
   }
 })
 
@@ -40,17 +42,36 @@ app.get('/create', function (req, res) {
   })
   
 app.post('/create', async function (req, res) {
-      const Student = new Students(req.body)
+  console.log("b",req.body)
+  console.log("f",req.file)
+      const Student = new Students({...req.body,pname:req.file.filename})
       await Student.save();
       res.redirect('/')
 })
 
-app.get('/edit', async (req, res) => {
+app.get('/edit',async (req, res) => {
   const Student = await Students.findById(req.query.id);
   res.render('edit', { Students: Student });
 });
-app.post("/edit", async (req, res) => {
-  await Students.updateOne({ _id: req.query.id }, { $set: req.body });
+
+app.post("/edit",upload.single("pname"), async (req, res) => {
+  const Student = await Students.findById(req.query.id);
+
+  const data = req.body;
+  const old_img = Student.pname;
+
+  if(req.file){
+    data["pname"] = req.file.filename;
+  }
+
+  await Students.updateOne({ _id: req.query.id }, { $set: data });
+
+  if(req.file){
+    fs.rm(__dirname + "/public/uploads"+old_img,()=>{
+      console.log("old delete");
+    })
+  }
+
   res.redirect('/');
 });
 
