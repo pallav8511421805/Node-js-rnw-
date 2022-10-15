@@ -23,6 +23,7 @@
                           <thead>
                             <tr>
                                 <th>No.</th>
+                                <th>Profile</th>
                                 <th>Name</th>
                                 <th>Age</th>
                                 <th>Father's name</th>
@@ -37,6 +38,11 @@
                             <% if(data){ let i=1; for(stu of data) { %>
                               <tr>
                                 <td><%= i %></td>
+                                <td>
+                                  <% if(stu.pname) { %>
+                                    <img width="30" src="<%= `uploads/${stu.pname}`%>"/>
+                                  <% } %>
+                                </td>
                                 <td><%= stu.name %></td>
                                 <td><%= stu.age %></td>
                                 <td><%= stu.fname %></td>
