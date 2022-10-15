@@ -3,6 +3,7 @@ const app = express()
 const mongoose = require('mongoose');
 const port = 3000;
 const bodyParser = require("body-parser");
+const multer = require("multer");
 const Students = require("./modules/students");
 mongoose.connect('mongodb://localhost:27017/school');
 
@@ -11,6 +12,19 @@ app.set("view engine" ,"ejs")
 const options = {
     index : false,
 }
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, '/public/uploads')
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+    cb(null, file.fieldname + '-' + uniqueSuffix)
+  }
+})
+
+const upload = multer({ storage: storage })
+
 app.use(express.static('public' ,options))
 
 app.use(bodyParser.json())
