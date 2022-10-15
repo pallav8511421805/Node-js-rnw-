@@ -24,6 +24,10 @@
                                 </div>
                             </div>
 
+                            <% if(stu.pname) { %>
+                                <img width="30" src="<%= `uploads/${stu.pname}`%>"/>
+                              <% } %>
+
                             <div class="divmg">
                                 <label class="h2">Full name</label>
                                 <div class="center">

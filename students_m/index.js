@@ -41,7 +41,7 @@ app.get('/create', function (req, res) {
     res.render('create')
   })
   
-app.post('/create', async function (req, res) {
+app.post('/create',upload.single("pname"), async function (req, res) {
   console.log("b",req.body)
   console.log("f",req.file)
       const Student = new Students({...req.body,pname:req.file.filename})
