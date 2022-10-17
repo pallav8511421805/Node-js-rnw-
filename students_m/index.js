@@ -67,8 +67,8 @@ app.post("/edit",upload.single("pname"), async (req, res) => {
   await Students.updateOne({ _id: req.query.id }, { $set: data });
 
   if(req.file){
-    fs.rm(__dirname + "/public/uploads"+old_img,()=>{
-      console.log("old delete");
+    fs.rm(__dirname + "/public/uploads/"+old_img,()=>{
+      console.log("old delete"+old_img);
     })
   }
 
