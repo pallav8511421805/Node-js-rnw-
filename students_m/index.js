@@ -5,7 +5,7 @@ const port = 3000;
 const bodyParser = require("body-parser");
 const fs = require("fs");
 const multer = require("multer");
-const Students = require("./modules/students");
+const Students = require("./models/students");
 mongoose.connect('mongodb://localhost:27017/school');
 
 app.set("view engine" ,"ejs")
