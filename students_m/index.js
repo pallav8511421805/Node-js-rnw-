@@ -42,11 +42,9 @@ app.get('/create', function (req, res) {
   })
   
 app.post('/create',upload.single("pname"), async function (req, res) {
-  console.log("b",req.body)
-  console.log("f",req.file)
-      const Student = new Students({...req.body, pname:req.file.filename})
-      await Student.save();
-      res.redirect('/')
+  const Student = new Students({...req.body, pname:req.file.filename})
+  await Student.save();
+  res.redirect('/')
 })
 
 app.get('/edit',async (req, res) => {
@@ -68,7 +66,6 @@ app.post("/edit",upload.single("pname"), async (req, res) => {
 
   if(req.file){
     fs.rm(__dirname + "/public/uploads/"+old_img,()=>{
-      console.log("old delete"+old_img);
     })
   }
 
