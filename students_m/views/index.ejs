@@ -16,7 +16,7 @@
                     <div class="w100">
                       
                       <div class="row">
-                        <a href="/create" class="atag">Form</a>
+                        <a href="/stu/create" class="atag">Form</a>
                       </div>
 
                         <table>
@@ -50,8 +50,8 @@
                                 <td><%= stu.fphone %></td>
                                 <td><%= stu.gender %></td>
                                 
-                                <td><div class="textcenter"><a href="<%= `/edit?id=${stu.id}` %>"><div class="btnaction"><i class="fa-solid fa-pencil"></i></div></a></div></td>
-                                <td><div class="textcenter"><a href="<%= `/delete?id=${stu.id}` %>"><div class="btnaction"><i class="fa-solid fa-trash-can"></i></div></a></div></td>
+                                <td><div class="textcenter"><a href="<%= `/stu/edit?id=${stu.id}` %>"><div class="btnaction"><i class="fa-solid fa-pencil"></i></div></a></div></td>
+                                <td><div class="textcenter"><a href="<%= `/stu/delete?id=${stu.id}` %>"><div class="btnaction"><i class="fa-solid fa-trash-can"></i></div></a></div></td>
                               </tr>
                                 <% i++; } } %>
                           </tbody>
