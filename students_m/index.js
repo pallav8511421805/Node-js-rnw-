@@ -3,6 +3,7 @@ const app = express()
 const mongoose = require('mongoose');
 const port = 3000;
 const bodyParser = require("body-parser");
+const appRoute = require('./routes')
 
 mongoose.connect('mongodb://localhost:27017/school');
 
@@ -16,6 +17,8 @@ app.use(express.static('public' ,options))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
+
+app.use(appRoute)
 
 app.listen(port,()=>{
     console.log(`http://localhost:${port}/`)
