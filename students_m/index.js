@@ -3,7 +3,7 @@ const app = express()
 const mongoose = require('mongoose');
 const port = 3000;
 const bodyParser = require("body-parser");
-const appRoute = require('./routes')
+const appRoute = require('./routes/index')
 
 mongoose.connect('mongodb://localhost:27017/school');
 
