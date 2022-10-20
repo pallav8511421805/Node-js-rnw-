@@ -26,7 +26,6 @@ const UPDATES = async (req, res) => {
   
     const data = req.body;
     const old_img = Student.pname;
-  
     if(req.file){
       data["pname"] = req.file.filename;
     }
@@ -34,7 +33,7 @@ const UPDATES = async (req, res) => {
     await Students.updateOne({ _id: req.query.id }, { $set: data });
   
     if(req.file){
-      fs.rm(__dirname + "/public/uploads/"+old_img,()=>{
+      fs.rm(__dirname + "/../public/uploads/"+old_img,()=>{
       })
     }
   
