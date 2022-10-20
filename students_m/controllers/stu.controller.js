@@ -3,22 +3,22 @@ const fs = require("fs");
 
 const GETSTU = async function (req, res) {
     const Student = await Students.find()
-    res.render('index',{ data : Student})
+    res.render('stu',{ data : Student})
   }
 
 const CREATESTU = function (req, res) {
-    res.render('create')
+    res.render('stu/create')
   }
 
 const CREATEPOST = async function (req, res) {
     const Student = new Students({...req.body, pname:req.file.filename})
     await Student.save();
-    res.redirect('/')
+    res.redirect('stu/')
   }  
 
 const EDIT = async (req, res) => {
     const Student = await Students.findById(req.query.id);
-    res.render('edit', { Students: Student });
+    res.render('stu/edit', { Students: Student });
   }
 
 const UPDATES = async (req, res) => {
