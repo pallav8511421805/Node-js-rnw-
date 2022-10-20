@@ -13,7 +13,7 @@ const CREATESTU = function (req, res) {
 const CREATEPOST = async function (req, res) {
     const Student = new Students({...req.body, pname:req.file.filename})
     await Student.save();
-    res.redirect('stu/')
+    res.redirect('/stu')
   }  
 
 const EDIT = async (req, res) => {
@@ -38,12 +38,12 @@ const UPDATES = async (req, res) => {
       })
     }
   
-    res.redirect('/');
+    res.redirect('/stu');
   }
 
 const DELETE = async (req, res) => {
     const result = await Students.deleteOne({ _id: req.query.id });
-    res.redirect('/');
+    res.redirect('/stu');
   }  
 module.exports = {
     GETSTU,
