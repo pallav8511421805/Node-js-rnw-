@@ -1,4 +1,4 @@
-const { GETSTU, CREATESTU, CREATEPOST, EDIT, UPDATES, DELETE } = require('../controllers/stu.controller');
+const { GETSTU, CREATESTU, CREATEPOST, EDIT, UPDATES, DELETE } = require('../controllers/book.controller');
 const express = require('express')
 const Route = express.Router();
 const upload = require('../utils/fileupload');
