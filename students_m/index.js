@@ -13,7 +13,7 @@ const options = {
     index: false,
 }
 
-app.get(async function (req, res) {
+app.get("/", async function (req, res) {
     res.render('home')
 })
 

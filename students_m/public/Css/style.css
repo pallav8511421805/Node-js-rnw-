@@ -220,3 +220,25 @@ input[type='radio']:checked:after {
 .dnone{
   display: none;
 }
+
+.atag2 {
+  width: 250px !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  text-decoration: none !important;
+  color: white !important;
+  font-size: 20px !important;
+  background-color: #00459f !important;
+  border: 2px solid #00459f !important;
+  border-radius: 10px !important;
+  font-family: "Lexend", sans-serif !important;
+  margin: 25px 0 !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  transition: all 0.5s !important;
+}
+.atag2:hover {
+  background-color: transparent !important;
+  border: 2px solid #00459f !important;
+  color: #00459f !important;
+}
