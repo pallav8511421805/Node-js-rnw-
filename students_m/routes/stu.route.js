@@ -4,14 +4,14 @@ const Route = express.Router();
 const upload = require('../utils/fileupload');
 
 Route.get('/', GETSTU)
-
+Route.get('/', GETSTUHOME)
 Route.get('/create', CREATESTU)
-  
+
 Route.post('/create', upload.single("pname"), CREATEPOST)
 
-Route.get('/edit',EDIT);
+Route.get('/edit', EDIT);
 
-Route.post("/edit",upload.single("pname"), UPDATES);
+Route.post("/edit", upload.single("pname"), UPDATES);
 
 Route.get("/delete", DELETE)
 
