@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mongo</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/all.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="row ">
+                <div class="box">
+                    <div class="w100">
+                      
+                      <div class="row">
+                        <a href="/stu/create" class="atag">Form</a>
+                      </div>
+
+                        <table>
+                          <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Profile</th>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Father's name</th>
+                                <th>Mother's name</th>
+                                <th>Mobile number</th>
+                                <th>Gender</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <% if(data){ let i=1; for(stu of data) { %>
+                              <tr>
+                                <td><%= i %></td>
+                                <td>
+                                  <% if(stu.pname) { %>
+                                    <img width="30" src="<%= `uploads/${stu.pname}`%>"/>
+                                  <% } %>
+                                </td>
+                                <td><%= stu.name %></td>
+                                <td><%= stu.age %></td>
+                                <td><%= stu.fname %></td>
+                                <td><%= stu.mname %></td>
+                                <td><%= stu.fphone %></td>
+                                <td><%= stu.gender %></td>
+                                
+                                <td><div class="textcenter"><a href="<%= `/stu/edit?id=${stu.id}` %>"><div class="btnaction"><i class="fa-solid fa-pencil"></i></div></a></div></td>
+                                <td><div class="textcenter"><a href="<%= `/stu/delete?id=${stu.id}` %>"><div class="btnaction"><i class="fa-solid fa-trash-can"></i></div></a></div></td>
+                              </tr>
+                                <% i++; } } %>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

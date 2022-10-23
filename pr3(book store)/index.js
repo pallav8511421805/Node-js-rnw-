@@ -5,13 +5,17 @@ const bodyParser = require("body-parser");
 const appRoute = require('./routes')
 const port = 3000;
 
-mongoose.connect('mongodb://localhost:27017/school');
+mongoose.connect('mongodb://localhost:27017/store');
 
 app.set("view engine", "ejs")
 
 const options = {
     index: false,
 }
+
+app.get("/", async function (req, res) {
+    res.render('home')
+})
 
 app.use(express.static('public', options))
 
