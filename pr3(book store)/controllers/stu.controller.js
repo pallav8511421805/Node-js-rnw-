@@ -1,48 +1,48 @@
-const Students = require("../models/students");
+const books = require("../models/book");
 const fs = require("fs");
 
 const GETSTU = async function (req, res) {
-  const Student = await Students.find()
-  res.render('stu', { data: Student })
+  const books = await books.find()
+  res.render('books', { data: books })
 }
 
 const CREATESTU = function (req, res) {
-  res.render('stu/create')
+  res.render('books/create')
 }
 
 const CREATEPOST = async function (req, res) {
-  const Student = new Students({ ...req.body, pname: req.file.filename })
-  await Student.save();
-  res.redirect('/stu')
+  const books = new books({ ...req.body, pname: req.file.filename })
+  await books.save();
+  res.redirect('/books')
 }
 
 const EDIT = async (req, res) => {
-  const Student = await Students.findById(req.query.id);
-  res.render('stu/edit', { Students: Student });
+  const books = await books.findById(req.query.id);
+  res.render('books/edit', { books: books });
 }
 
 const UPDATES = async (req, res) => {
-  const Student = await Students.findById(req.query.id);
+  const books = await books.findById(req.query.id);
 
   const data = req.body;
-  const old_img = Student.pname;
+  const old_img = books.pname;
   if (req.file) {
     data["pname"] = req.file.filename;
   }
 
-  await Students.updateOne({ _id: req.query.id }, { $set: data });
+  await books.updateOne({ _id: req.query.id }, { $set: data });
 
   if (req.file) {
     fs.rm(__dirname + "/../public/uploads/" + old_img, () => {
     })
   }
 
-  res.redirect('/stu');
+  res.redirect('/books');
 }
 
 const DELETE = async (req, res) => {
-  const result = await Students.deleteOne({ _id: req.query.id });
-  res.redirect('/stu');
+  const result = await books.deleteOne({ _id: req.query.id });
+  res.redirect('/books');
 }
 module.exports = {
   GETSTU,

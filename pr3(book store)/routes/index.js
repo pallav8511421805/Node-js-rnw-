@@ -1,8 +1,8 @@
 const express = require('express')
 const Route = express.Router();
 
-const stuRoute = require('../routes/stu.route')
+const bookRoute = require('./book.route')
 
-Route.use('/stu',stuRoute)
+Route.use('/book', bookRoute)
 
 module.exports = Route;

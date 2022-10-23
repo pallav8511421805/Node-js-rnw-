@@ -35,23 +35,23 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <% if(data){ let i=1; for(stu of data) { %>
+                            <% if(data){ let i=1; for(books of data) { %>
                               <tr>
                                 <td><%= i %></td>
                                 <td>
-                                  <% if(stu.pname) { %>
-                                    <img width="30" src="<%= `uploads/${stu.pname}`%>"/>
+                                  <% if(books.pname) { %>
+                                    <img width="30" src="<%= `uploads/${books.pname}`%>"/>
                                   <% } %>
                                 </td>
-                                <td><%= stu.name %></td>
-                                <td><%= stu.age %></td>
-                                <td><%= stu.fname %></td>
-                                <td><%= stu.mname %></td>
-                                <td><%= stu.fphone %></td>
-                                <td><%= stu.gender %></td>
+                                <td><%= books.name %></td>
+                                <td><%= books.age %></td>
+                                <td><%= books.fname %></td>
+                                <td><%= books.mname %></td>
+                                <td><%= books.fphone %></td>
+                                <td><%= books.gender %></td>
                                 
-                                <td><div class="textcenter"><a href="<%= `/stu/edit?id=${stu.id}` %>"><div class="btnaction"><i class="fa-solid fa-pencil"></i></div></a></div></td>
-                                <td><div class="textcenter"><a href="<%= `/stu/delete?id=${stu.id}` %>"><div class="btnaction"><i class="fa-solid fa-trash-can"></i></div></a></div></td>
+                                <td><div class="textcenter"><a href="<%= `/books/edit?id=${stu.id}` %>"><div class="btnaction"><i class="fa-solid fa-pencil"></i></div></a></div></td>
+                                <td><div class="textcenter"><a href="<%= `/books/delete?id=${stu.id}` %>"><div class="btnaction"><i class="fa-solid fa-trash-can"></i></div></a></div></td>
                               </tr>
                                 <% i++; } } %>
                           </tbody>
