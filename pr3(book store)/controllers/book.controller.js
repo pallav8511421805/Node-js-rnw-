@@ -3,22 +3,22 @@ const fs = require("fs");
 
 const GETSTU = async function (req, res) {
   const books = await books.find()
-  res.render('books', { data: books })
+  res.render('index', { data: books })
 }
 
 const CREATESTU = function (req, res) {
-  res.render('books/create')
+  res.render('create')
 }
 
 const CREATEPOST = async function (req, res) {
   const books = new books({ ...req.body, pname: req.file.filename })
   await books.save();
-  res.redirect('/books')
+  res.redirect('index')
 }
 
 const EDIT = async (req, res) => {
   const books = await books.findById(req.query.id);
-  res.render('books/edit', { books: books });
+  res.render('edit', { books: books });
 }
 
 const UPDATES = async (req, res) => {
@@ -37,12 +37,12 @@ const UPDATES = async (req, res) => {
     })
   }
 
-  res.redirect('/books');
+  res.redirect('index');
 }
 
 const DELETE = async (req, res) => {
   const result = await books.deleteOne({ _id: req.query.id });
-  res.redirect('/books');
+  res.redirect('index');
 }
 module.exports = {
   GETSTU,
