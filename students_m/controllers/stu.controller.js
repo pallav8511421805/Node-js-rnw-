@@ -51,5 +51,4 @@ module.exports = {
   EDIT,
   UPDATES,
   DELETE,
-  GETSTUHOME
 }

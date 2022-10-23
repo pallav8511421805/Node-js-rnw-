@@ -13,6 +13,10 @@ const options = {
     index: false,
 }
 
+app.get(async function (req, res) {
+    res.render('home')
+})
+
 app.use(express.static('public', options))
 
 app.use(bodyParser.json())
