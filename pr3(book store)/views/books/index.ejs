@@ -50,8 +50,8 @@
                                 <td><%= books.fphone %></td>
                                 <td><%= books.gender %></td>
                                 
-                                <td><div class="textcenter"><a href="<%= `/books/edit?id=${stu.id}` %>"><div class="btnaction"><i class="fa-solid fa-pencil"></i></div></a></div></td>
-                                <td><div class="textcenter"><a href="<%= `/books/delete?id=${stu.id}` %>"><div class="btnaction"><i class="fa-solid fa-trash-can"></i></div></a></div></td>
+                                <td><div class="textcenter"><a href="<%= `/edit?id=${books.id}` %>"><div class="btnaction"><i class="fa-solid fa-pencil"></i></div></a></div></td>
+                                <td><div class="textcenter"><a href="<%= `/delete?id=${books.id}` %>"><div class="btnaction"><i class="fa-solid fa-trash-can"></i></div></a></div></td>
                               </tr>
                                 <% i++; } } %>
                           </tbody>

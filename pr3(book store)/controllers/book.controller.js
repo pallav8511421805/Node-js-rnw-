@@ -2,27 +2,27 @@ const books = require("../models/book");
 const fs = require("fs");
 
 const GETSTU = async function (req, res) {
-  const books = await books.find()
-  res.render('index', { data: books })
+  const book = await books.find()
+  res.render('books', { data: book })
 }
 
 const CREATESTU = function (req, res) {
-  res.render('create')
+  res.render('books/create')
 }
 
 const CREATEPOST = async function (req, res) {
-  const books = new books({ ...req.body, pname: req.file.filename })
-  await books.save();
-  res.redirect('index')
+  const book = new books({ ...req.body, pname: req.file.filename })
+  await book.save();
+  res.redirect('/books')
 }
 
 const EDIT = async (req, res) => {
-  const books = await books.findById(req.query.id);
-  res.render('edit', { books: books });
+  const book = await books.findById(req.query.id);
+  res.render('books/edit', { books: book });
 }
 
 const UPDATES = async (req, res) => {
-  const books = await books.findById(req.query.id);
+  const book = await books.findById(req.query.id);
 
   const data = req.body;
   const old_img = books.pname;
@@ -37,12 +37,12 @@ const UPDATES = async (req, res) => {
     })
   }
 
-  res.redirect('index');
+  res.redirect('/books');
 }
 
 const DELETE = async (req, res) => {
   const result = await books.deleteOne({ _id: req.query.id });
-  res.redirect('index');
+  res.redirect('/books');
 }
 module.exports = {
   GETSTU,
