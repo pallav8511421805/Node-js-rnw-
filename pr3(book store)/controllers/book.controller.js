@@ -43,7 +43,7 @@ const UPDATES = async (req, res) => {
 const DELETE = async (req, res) => {
   const result = await books.deleteOne({ _id: req.query.id });
   const iddata = req.query.id;
-  const book = await books.findById(iddata);
+  const book = books.findById(iddata);
 
   console.log("book", book)
 
