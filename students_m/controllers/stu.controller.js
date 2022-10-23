@@ -5,9 +5,7 @@ const GETSTU = async function (req, res) {
   const Student = await Students.find()
   res.render('stu', { data: Student })
 }
-const GETSTUHOME = async function (req, res) {
-  res.render('home')
-}
+
 const CREATESTU = function (req, res) {
   res.render('stu/create')
 }
