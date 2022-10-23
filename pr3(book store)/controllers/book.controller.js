@@ -42,6 +42,8 @@ const UPDATES = async (req, res) => {
 
 const DELETE = async (req, res) => {
   const result = await books.deleteOne({ _id: req.query.id });
+  const book = await books.findById(req.query.id);
+  console.log(book)
   res.redirect('/books');
 }
 module.exports = {
