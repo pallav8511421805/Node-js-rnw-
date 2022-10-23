@@ -25,7 +25,7 @@ const UPDATES = async (req, res) => {
   const book = await books.findById(req.query.id);
 
   const data = req.body;
-  const old_img = books.pname;
+  const old_img = book.pname;
   if (req.file) {
     data["pname"] = req.file.filename;
   }
