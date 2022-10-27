@@ -229,8 +229,8 @@ input[type='radio']:checked:after {
   text-decoration: none !important;
   color: white !important;
   font-size: 20px !important;
-  background-color: crimson !important;
-  border: 2px solid crimson !important;
+  background-color: cornflowerblue !important;
+  border: 2px solid cornflowerblue !important;
   border-radius: 10px !important;
   font-family: "Lexend", sans-serif !important;
   margin: 25px 0 !important;
@@ -240,8 +240,8 @@ input[type='radio']:checked:after {
 }
 .atag2:hover {
   background-color: transparent !important;
-  border: 2px solid crimson !important;
-  color: crimson !important;
+  border: 2px solid cornflowerblue !important;
+  color: cornflowerblue !important;
 }
 .mg2{
   margin: 100px 0;
