@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mongo</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/all.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="row ">
+                <div class="box5 mg2">
+                    <div class="w100">
+
+                        <table>
+                          <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>image</th>
+                                <th>title</th>
+                                <th>Author Name</th>
+                                <th>rating</th>
+                                <th>category</th>
+                                <th>price</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <% if(data){ let i=1; for(books of data) { %>
+                              <tr>
+                                <td><%= i %></td>
+                                <td>
+                                  <% if(books.pname) { %>
+                                    <img width="30" src="<%= `/uploads/${books.pname}`%>"/>
+                                  <% } %>
+                                </td>
+                                <td><%= books.title %></td>
+                                <td><%= books.aname %></td>
+                                <td><%= books.rate%></td>
+                                <td><%= books.bookg %></td>
+                                <td><%= books.price%></td>
+                                
+                                <td><div class="textcenter"><a href="<%= `/books/edit?id=${books.id}` %>"><div class="btnaction"><i class="fa-solid fa-pencil"></i></div></a></div></td>
+                                <td><div class="textcenter"><a href="<%= `/books/delete?id=${books.id}` %>"><div class="btnaction"><i class="fa-solid fa-trash-can"></i></div></a></div></td>
+                              </tr>
+                                <% i++; } } %>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
