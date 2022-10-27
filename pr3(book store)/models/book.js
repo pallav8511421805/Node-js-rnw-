@@ -1,3 +1,3 @@
 const mongoose = require('mongoose');
-const books = mongoose.model('Books', { name: String, age: Number, fname: String, mname: String, fphone: Number, gender: String, pname: String });
+const books = mongoose.model('Books', { title: String, aname: String, rate: Number, bookg: String, price: Number, fphone: Number, gender: String, pname: String });
 module.exports = books;

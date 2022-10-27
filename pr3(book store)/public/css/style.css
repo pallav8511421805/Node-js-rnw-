@@ -26,22 +26,15 @@ body {
   width: 90%;
   height: auto;
   padding: 25px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   background-color: white;
   box-shadow: 5px 10px 0 #00459f;
+  
 }
 
 .box1 {
   width: 50%;
   height: auto;
   padding: 25px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   background-color: white;
   box-shadow: 5px 10px 0 #00459f;
 }
