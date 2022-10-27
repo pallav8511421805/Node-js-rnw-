@@ -11,65 +11,66 @@
     <section class="paddingsec">
         <div class="container">
             <div class="row ">
-                <div class="box1">
+                <div class="box1 mg2">
                     <div class="w100">
-                        <h1 class="h1">Edit student data</h1>
+                        <h1 class="h1">Edit book data</h1>
                         <form method="post" class="mg" enctype="multipart/form-data">
 
-                            <div class="divmg">
-                                <label class="h2">Profile image</label>
-                                <div class="center">
-                                    <input type="file" name="pname" placeholder="Enter your full name" class="dnone" id="img"/>
-                                    <label for="img" class="uploadimg">Profile picture</label>
-                                </div>
-                            </div>
+                                            <div class="divmg">
+                                                <label class="h2">Book's image</label>
+                                                <div class="center">
+                                                    <input type="file" name="pname" class="dnone" id="img"/>
+                                                    <label for="img" class="uploadimg">Book cover image</label>
+                                                </div>
+                                            </div>
 
-                            <% if(books.pname) { %>
-                                <img width="30" src="<%= `/uploads/${books.pname}`%>"/>
-                              <% } %>
-
-                            <div class="divmg">
-                                <label class="h2">Full name</label>
-                                <div class="center">
-                                    <input type="text" name="aname" placeholder="Enter your full name" class='input' value="<%= books.aname %>"/>
-                                </div>
-                            </div>
-    
-                            <div class="divmg">
-                                <label class="h2">Age</label>
-                                <div class="center">
-                                    <input type="text" name="rate" placeholder="Enter your age" class='input' value="<%= books.rate %>"/>
-                                </div>
-                                </div>
-    
-                                <div class="divmg">
-                                <label class="h2">Father's name</label>
-                                <div class="center">
-                                    <input type="text" name="bookg" placeholder="Enter your father's name" class='input' value="<%= books.fname %>"/>
-                                </div>
-                                </div>
-    
-                                <div class="divmg">
-                                    <label class="h2">Mother's name</label>
-                                    <div class="center">
-                                        <input type="text" name="price" placeholder="Enter your mother's name" value="<%= books.price %>" class='input'/>
-                                    </div>
-                                    </div>
-    
-                                    <div class="divmg">
-                                        <label class="h2">Father's mobile number</label>
-                                        <div class="center">
-                                            <input type="text" name="fphone" placeholder="Enter your father's mobile number" value="<%= books.fphone %>" class='input' maxlength="10"/>
-                                        </div>
-                                        </div>
-    
+                                            <% if(books.pname) { %>
+                                                <img width="30" src="<%= `/uploads/${books.pname}`%>"/>
+                                              <% } %>
+                
+                                            <div class="divmg">
+                                                <label class="h2">Book's title</label>
+                                                <div class="center">
+                                                    <input type="text" name="title" placeholder="Enter book title" value="<%= books.title %>" class='input'/>
+                                                </div>
+                                            </div>
+                
                                         <div class="divmg">
-                                            <label class="h2">Gender</label>
-                                            <div class="center1">
-                                                <input type="radio" name="gender" value="Male" <%= books.gender ==='Male' ?  'checked' : "" %> /> <span class='input1'>Male</span>
-                                                <input type="radio" name="gender" value="Female" <%= books.gender === 'Female' ?  'checked' : "" %>/> <span class='input1'>Female</span>
+                                            <label class="h2">Author name</label>
+                                            <div class="center">
+                                                <input type="text" name="aname" placeholder="Enter book Author name" value="<%= books.aname %>" class='input'/>
+                                            </div>
+                                        </div>
+                
+                                        <div class="divmg">
+                                            <label class="h2">Rate the book</label>
+                                            <div class="center">
+                                                <input type="text" name="rate" placeholder="Enter book rating" value="<%= books.rate %>" class='input'/>
                                             </div>
                                             </div>
+                
+                                            <div class="divmg">
+                                            <label class="h2">Book genre</label>
+                                            <div class="center">
+                                                <select name="bookg">
+                                                    <option <%= books.bookg === 'Action and Adventure' ? 'selected' :'' %> 
+                                                        value="Action and Adventure
+                                                    " >Action and Adventure
+                                                </option>
+                                                    <option <%= books.bookg === 'Classics' ? 'selected' :'' %>  value="Classics">Classics</option>
+                                                    <option <%= books.bookg === 'Comic Book or Graphic Novel' ? 'selected' :'' %>  value="Comic Book or Graphic Novel">Comic Book or Graphic Novel</option>
+                                                    <option <%= books.bookg === 'Fantasy' ? 'selected' :'' %>  value="Fantasy">Fantasy</option>
+                                                    <option <%= books.bookg === 'Horror' ? 'selected' :'' %>  value="Horror">Horror</option>
+                                                </select>
+                                            </div>
+                                            </div>
+                
+                                            <div class="divmg">
+                                                <label class="h2">Book's price</label>
+                                                <div class="center">
+                                                    <input type="text" name="price" placeholder="Enter book price" class='input' value="<%= books.price %>" />
+                                                </div>
+                                                </div>
                            
                             <div class="center">
                                 <input type="submit" value="Update" class='btn'/>

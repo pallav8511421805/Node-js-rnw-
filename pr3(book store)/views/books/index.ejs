@@ -12,20 +12,20 @@
     <section>
         <div class="container">
             <div class="row ">
-                <div class="box">
+                <div class="box mg2">
                     <div class="w100">
 
                         <table>
                           <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>Profile</th>
-                                <th>Name</th>
-                                <th>Age</th>
-                                <th>Father's name</th>
-                                <th>Mother's name</th>
-                                <th>Mobile number</th>
-                                <th>Gender</th>
+                                <th>Book image</th>
+                                <th>Book's title</th>
+                                <th>Author Name</th>
+                                <th>Book's rating</th>
+                                <th>Book's title</th>
+                                <th>Book's category</th>
+                                <th>Book's price</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
@@ -39,12 +39,11 @@
                                     <img width="30" src="<%= `/uploads/${books.pname}`%>"/>
                                   <% } %>
                                 </td>
-                                <td><%= books.name %></td>
-                                <td><%= books.age %></td>
-                                <td><%= books.fname %></td>
-                                <td><%= books.mname %></td>
-                                <td><%= books.fphone %></td>
-                                <td><%= books.gender %></td>
+                                <td><%= books.title %></td>
+                                <td><%= books.aname %></td>
+                                <td><%= books.rate%></td>
+                                <td><%= books.bookg %></td>
+                                <td><%= books.price%></td>
                                 
                                 <td><div class="textcenter"><a href="<%= `/books/edit?id=${books.id}` %>"><div class="btnaction"><i class="fa-solid fa-pencil"></i></div></a></div></td>
                                 <td><div class="textcenter"><a href="<%= `/books/delete?id=${books.id}` %>"><div class="btnaction"><i class="fa-solid fa-trash-can"></i></div></a></div></td>
