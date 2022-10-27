@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-    <section class="paddingsec">
+    <section>
         <div class="container">
             <div class="row">
                 <div class="box1">
@@ -27,7 +27,7 @@
                             <div class="divmg">
                                 <label class="h2">Book's title</label>
                                 <div class="center">
-                                    <input type="text" name="title" placeholder="Enter book Author name" class='input'/>
+                                    <input type="text" name="title" placeholder="Enter book title" class='input'/>
                                 </div>
                             </div>
 
@@ -48,31 +48,24 @@
                             <div class="divmg">
                             <label class="h2">Book genre</label>
                             <div class="center">
-                                <input type="text" name="bookg" placeholder="Enter Book genre" class='input'/>
+                                <select>
+                                    <option name="bookg" value="Action and Adventure
+                                    ">Action and Adventure
+                                </option>
+                                    <option name="bookg" value="Classics">Classics</option>
+                                    <option name="bookg" value="Comic Book or Graphic Novel">Comic Book or Graphic Novel</option>
+                                    <option name="bookg" value="Fantasy">Fantasy</option>
+                                    <option name="bookg" value="Horror">Horror</option>
+                                </select>
                             </div>
                             </div>
 
                             <div class="divmg">
                                 <label class="h2">Book's price</label>
                                 <div class="center">
-                                    <input type="text" name="price" placeholder="Enter your mother's name" class='input'/>
+                                    <input type="text" name="price" placeholder="Enter book price" class='input'/>
                                 </div>
                                 </div>
-
-                                <div class="divmg">
-                                    <label class="h2">Father's mobile number</label>
-                                    <div class="center">
-                                        <input type="text" name="fphone" placeholder="Enter your father's mobile number" class='input' maxlength="10"/>
-                                    </div>
-                                    </div>
-
-                                    <div class="divmg">
-                                        <label class="h2">Gender</label>
-                                        <div class="center1">
-                                            <input type="radio" name="gender" value="Male"/> <span class='input1'>Male</span>
-                                            <input type="radio" name="gender"value="Female"/> <span class='input1'>Female</span>
-                                        </div>
-                                        </div>
                                     
                             <div class="center">
                                 <input type="submit" value="Submit" class='btn'/>
