@@ -31,6 +31,14 @@ body {
   
 }
 
+.box5 {
+  width: 100%;
+  height: auto;
+  padding: 25px;
+  background-color: white;
+  box-shadow: 5px 10px 0 crimson;
+}
+
 .box1 {
   width: 80%;
   height: auto;
@@ -237,4 +245,7 @@ input[type='radio']:checked:after {
 }
 .mg2{
   margin: 100px 0;
+}
+.jsb{
+  justify-content: space-between;
 }
