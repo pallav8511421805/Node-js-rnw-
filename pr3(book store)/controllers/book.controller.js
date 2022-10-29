@@ -6,10 +6,29 @@ const GETSTU = async function (req, res) {
   let searchdata = '';
   if (req.query.search) {
     searchdata = req.query.search;
-    console.log("data", searchdata)
   }
-  const book = await books.find()
-  res.render('books', { data: book })
+
+  let page = 1;
+  if (req.query.page) {
+    page = req.query.page;
+  }
+
+  const limit = 3;
+
+  const book = await books.find({
+    $or: [
+      { aname: { $regex: ".*" + searchdata + ".*", $options: 'i' } },
+      { title: { $regex: ".*" + searchdata + ".*", $options: 'i' } },
+      { bookg: { $regex: ".*" + searchdata + ".*", $options: 'i' } },
+      { date: { $regex: ".*" + searchdata + ".*", $options: 'i' } },
+      { price: searchdata }
+    ]
+  })
+    .limit(limit * 1).skip((page - 1) * limit).exec();
+
+  const counting = await books.find().countDocuments();
+
+  res.render('books', { data: book, totalpage: Math.ceil(counting / limit), curruntpage: page })
 }
 
 const CREATESTU = function (req, res) {
