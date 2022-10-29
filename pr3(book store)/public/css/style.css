@@ -250,6 +250,9 @@ input[type='radio']:checked:after {
 .mg2{
   margin: 100px 0;
 }
+.mg2a{
+  margin: 50px 0;
+}
 .jsb{
   justify-content: space-between;
 }
@@ -294,4 +297,24 @@ select {
   font-size: 16px;
   border-radius: 100px;
   border: 2px solid crimson;
+}
+.jsbdata2{
+  justify-content: center;
+}
+.btnaction2 {
+  background-color: transparent;
+  color: crimson ;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius:50px;
+  text-align: center;
+  line-height: 50px;
+  border: 2px solid crimson;
+  transition: all 0.5s;
+  margin: 15px 0;
+}
+.btnaction2:hover {
+  color: white;
+  background-color: crimson;
 }
