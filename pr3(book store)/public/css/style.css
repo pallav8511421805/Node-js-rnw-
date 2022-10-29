@@ -318,3 +318,6 @@ select {
   color: white;
   background-color: crimson;
 }
+.mgpage{
+  margin: 0 5px;
+}
