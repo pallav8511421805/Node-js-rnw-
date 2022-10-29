@@ -57,6 +57,17 @@ body {
   text-align: center;
   font-size: 40px;
 }
+.inputs{
+  color: #1e1f21;
+  width: 84%;
+  height: 40px;
+  background-color: white;
+  border: 2px solid crimson;
+  text-indent: 20px;
+  font-family: "Lexend", sans-serif;
+  border-radius: 10px;
+  margin: 5px 0;
+}
 .input {
   color: #1e1f21;
   width: 100%;
@@ -92,6 +103,20 @@ body {
   background-color: transparent;
   border: 2px solid crimson;
   color: crimson;
+}
+.btnsearch{
+  color: white;
+  width: 15%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  background-color: crimson;
+  border: 2px solid crimson;
+  border-radius: 10px;
+  font-family: "Lexend", sans-serif;
+  text-align: center;
+  text-transform: capitalize;
+  transition: all 0.5s;
 }
 .center {
   justify-content:flex-start;
@@ -330,4 +355,12 @@ color: white;
 font-size: 18px;
 border: none;
 border-radius: 5px;
+}
+.acenter{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.acself{
+  align-self: center;
 }
