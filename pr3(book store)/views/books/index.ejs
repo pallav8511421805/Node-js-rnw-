@@ -11,47 +11,33 @@
 <body>
     <section>
         <div class="container">
-            <div class="row ">
+            <div class="row jsbdata">
+
+                <% if(data){ for(books of data) { %>
                 <div class="box5 mg2">
-                    <div class="w100">
-                      <h1 style="color:crimson;text-align: center;margin: 25px 0;">Book store</h1>
-                        <table>
-                          <thead>
-                            <tr>
-                                <th>No.</th>
-                                <th>image</th>
-                                <th>title</th>
-                                <th>Author Name</th>
-                                <th>rating</th>
-                                <th>category</th>
-                                <th>price</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <% if(data){ let i=1; for(books of data) { %>
-                              <tr>
-                                <td><%= i %></td>
-                                <td>
-                                  <% if(books.pname) { %>
-                                    <img width="30" src="<%= `/uploads/${books.pname}`%>"/>
-                                  <% } %>
-                                </td>
-                                <td><%= books.title %></td>
-                                <td><%= books.aname %></td>
-                                <td><%= books.rate%></td>
-                                <td><%= books.bookg %></td>
-                                <td><%= books.price%></td>
-                                
-                                <td><div class="textcenter"><a href="<%= `/books/edit?id=${books.id}` %>"><div class="btnaction"><i class="fa-solid fa-pencil"></i></div></a></div></td>
-                                <td><div class="textcenter"><a href="<%= `/books/delete?id=${books.id}` %>"><div class="btnaction"><i class="fa-solid fa-trash-can"></i></div></a></div></td>
-                              </tr>
-                                <% i++; } } %>
-                          </tbody>
-                        </table>
-                    </div>
+                <div class="w100">
+                  <h1 class="h1data"><%= books.title %></h1>
+                  <% if(books.pname) { %>
+                    <div class="rowdata">
+                   <img src="<%= `/uploads/${books.pname}`%>" class="dataimg" alt="img" title="img">
+                  </div>
+                  <label class="pdata2">Author name</label>
+                  <p class="pdata"><%= books.aname %></p>
+                  <label class="pdata2">Ratings</label>
+                  <p class="pdata"><%= books.rate%></p>
+                  <label class="pdata2">Category</label>
+                  <p class="pdata"><%= books.bookg %></p>
+                  <label class="pdata2">Price</label>
+                  <p class="pdata"><%= books.price%></p>
+                   <% } %>
+                   <div class="divrow">
+                    <button class="btnaction">Edit</button>
+                    <button class="btnaction">Edit</button>
+                   </div>
                 </div>
+                </div>
+                <% } } %>
+
             </div>
         </div>
     </section>
