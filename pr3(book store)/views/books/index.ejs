@@ -31,8 +31,8 @@
                   <p class="pdata"><%= books.price%></p>
                    <% } %>
                    <div class="divrow">
-                    <button class="btnaction">Edit</button>
-                    <button class="btnaction">Delete</button>
+                    <a href="<%= `/books/edit?id=${books.id}` %>" class="btnaction">Edit</a>
+                    <a href="<%= `/books/delete?id=${books.id}` %>" class="btnaction">Delete</a>
                    </div>
                 </div>
                 </div>
