@@ -286,3 +286,25 @@ input[type='radio']:checked:after {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+select {
+  background-color:transparent;
+  color:crimson;
+  font-family: 'jost';
+  padding:5px 25px;
+  text-indent: 25px;
+  font-size: 16px;
+  border-radius: 100px;
+  border: 2px solid crimson;
+}
+.customselect{
+  position: relative;
+}
+.customarrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  background-color: crimson;
+  height: 100%;
+  width: 4em;
+}
