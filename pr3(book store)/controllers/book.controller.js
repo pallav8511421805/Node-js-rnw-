@@ -2,6 +2,12 @@ const books = require("../models/book");
 const fs = require("fs");
 
 const GETSTU = async function (req, res) {
+
+  let searchdata = '';
+  if (req.query.search) {
+
+  }
+
   const book = await books.find()
   res.render('books', { data: book })
 }
