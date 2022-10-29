@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mongo</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/all.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="row jsbdata">
+
+                <% if(data){ for(books of data) { %>
+                <div class="box5 mg2a">
+                <div class="w100">
+                  <h1 class="h1data"><%= books.title %></h1>
+                  <% if(books.pname) { %>
+                    <div class="rowdata">
+                   <img src="<%= `/uploads/${books.pname}`%>" class="dataimg" alt="img" title="img">
+                  </div>
+                  <label class="pdata2">Author name</label>
+                  <p class="pdata"><%= books.aname %></p>
+                  <label class="pdata2">Publish date</label>
+                  <p class="pdata"><%= books.date%>₹</p>
+                  <label class="pdata2">Ratings</label>
+                  <p class="pdata"><%= books.rate%></p>
+                  <label class="pdata2">Category</label>
+                  <p class="pdata"><%= books.bookg %></p>
+                  <label class="pdata2">Price</label>
+                  <p class="pdata"><%= books.price%>₹</p>
+                   <% } %>
+                   <div class="divrow">
+                    <a href="<%= `/books/edit?id=${books.id}` %>" class="btnaction">Edit</a>
+                    <a href="<%= `/books/delete?id=${books.id}` %>" class="btnaction">Delete</a>
+                   </div>
+                </div>
+                </div>
+                <% } } %>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="row jsbdata2">
+        <button class="btnaction2 mgpage">1</button>
+        <button class="btnaction2 mgpage">2</button>
+        <button class="btnaction2 mgpage">3</button>
+        <button class="btnaction2 mgpage">4</button>
+        <button class="btnaction2 mgpage">5</button>
+    </div>
+</body>
+</html>
