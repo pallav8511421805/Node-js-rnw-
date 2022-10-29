@@ -5,10 +5,18 @@ const GETSTU = async function (req, res) {
 
   let searchdata = '';
   if (req.query.search) {
-
+    searchdata = req.query.search;
   }
 
-  const book = await books.find()
+  const book = await books.find({
+    '$or': [
+      { 'title': { $regex: searchdata } },
+      { 'aname': { $regex: searchdata } },
+      { 'bookg': { $regex: searchdata } },
+      { 'price': { $regex: searchdata } },
+      { 'date': { $regex: searchdata } }
+    ]
+  })
   res.render('books', { data: book })
 }
 
