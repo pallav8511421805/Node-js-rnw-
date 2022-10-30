@@ -1,8 +1,6 @@
 const books = require("../models/book");
 const fs = require("fs");
 
-
-
 const SEARCH = async function (req, res) {
 
   if (req.query.search) {
@@ -11,7 +9,7 @@ const SEARCH = async function (req, res) {
       if (err) {
         console.log(err);
       } else {
-        res.render('pages/index', { data: data });
+        res.render('../views/books/index', { data: data });
       }
     })
   }
