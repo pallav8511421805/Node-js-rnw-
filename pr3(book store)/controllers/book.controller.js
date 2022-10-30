@@ -3,10 +3,10 @@ const fs = require("fs");
 
 const GETSTU = async function (req, res) {
 
-  let searchdata = '';
-  if (req.query.search) {
-    searchdata = req.query.search;
-  }
+  // let searchdata = '';
+  // if (req.query.search) {
+  //   searchdata = req.query.search;
+  // }
 
   let page = 1;
   if (req.query.page) {
@@ -15,15 +15,7 @@ const GETSTU = async function (req, res) {
 
   const limit = 3;
 
-  const book = await books.find({
-    $or: [
-      { aname: { $regex: ".*" + searchdata + ".*", $options: 'i' } },
-      { title: { $regex: ".*" + searchdata + ".*", $options: 'i' } },
-      { bookg: { $regex: ".*" + searchdata + ".*", $options: 'i' } },
-      { date: { $regex: ".*" + searchdata + ".*", $options: 'i' } },
-      { price: searchdata }
-    ]
-  })
+  const book = await books.find()
     .limit(limit * 1).skip((page - 1) * limit).exec();
 
   const counting = await books.find().countDocuments();
