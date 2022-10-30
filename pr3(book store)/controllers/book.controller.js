@@ -4,14 +4,8 @@ const fs = require("fs");
 const SEARCH = async function (req, res) {
 
   if (req.query.search) {
-
-    const book = await books.find({ $or: [{ title: { '$regex': req.query.search } }, { aname: { '$regex': req.query.search } }] }, (err, data) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.render('books/index', { data: data });
-      }
-    })
+    const book = await books.find({ $or: [{ title: { '$regex': req.query.search } }, { aname: { '$regex': req.query.search } }] })
+    res.render('books/index', { data: book });
   }
 }
 
