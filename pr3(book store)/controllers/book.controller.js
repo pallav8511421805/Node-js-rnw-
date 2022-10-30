@@ -34,7 +34,7 @@ const CREATEPOST = async function (req, res) {
 }
 
 const EDIT = async (req, res) => {
-  const book = await books.findById(req.query.id);
+  const book = await books.findById(req.params.id);
   res.render('books/edit', { books: book });
 }
 
@@ -58,7 +58,7 @@ const UPDATES = async (req, res) => {
 }
 
 const DELETE = async (req, res) => {
-  const result = await books.deleteOne({ _id: req.query.id });
+  const result = await books.deleteOne({ _id: req.params.id });
   res.redirect('/books');
 }
 module.exports = {

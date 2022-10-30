@@ -9,10 +9,10 @@ Route.get('/create', CREATESTU)
 
 Route.post('/create', upload.single("pname"), CREATEPOST)
 
-Route.get('/edit', EDIT);
+Route.get('/edit/:id', EDIT);
 
 Route.post("/edit", upload.single("pname"), UPDATES);
 
-Route.get("/delete", DELETE)
+Route.get("/delete/:id", DELETE)
 
 module.exports = Route;
