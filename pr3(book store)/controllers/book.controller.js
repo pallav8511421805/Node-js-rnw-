@@ -9,7 +9,7 @@ const SEARCH = async function (req, res) {
       if (err) {
         console.log(err);
       } else {
-        res.render('../views/books/index', { data: data });
+        res.render('books/index', { data: data });
       }
     })
   }
