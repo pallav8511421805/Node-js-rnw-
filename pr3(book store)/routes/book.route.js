@@ -1,4 +1,4 @@
-const { GETSTU, CREATESTU, CREATEPOST, EDIT, UPDATES, DELETE, SEARCH } = require('../controllers/book.controller');
+const { GETSTU, CREATESTU, CREATEPOST, EDIT, UPDATES, DELETE } = require('../controllers/book.controller');
 const express = require('express')
 const Route = express.Router();
 const upload = require('../utils/fileupload');
@@ -14,7 +14,5 @@ Route.get('/edit', EDIT);
 Route.post("/edit", upload.single("pname"), UPDATES);
 
 Route.get("/delete", DELETE)
-
-Route.get("/search", SEARCH)
 
 module.exports = Route;

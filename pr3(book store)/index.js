@@ -14,6 +14,14 @@ const options = {
     index: false,
 }
 
+app.get("/search", async function (req, res) {
+
+    if (req.query.search) {
+        const book = await books.find({ $or: [{ title: { '$regex': req.query.search } }, { aname: { '$regex': req.query.search } }] })
+        res.render('books/index', { data: book });
+    }
+})
+
 app.get("/", async function (req, res) {
     res.render('home')
 })
