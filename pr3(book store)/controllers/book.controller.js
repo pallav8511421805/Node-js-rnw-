@@ -19,8 +19,7 @@ const GETSTU = async function (req, res) {
     .limit(limit * 1).skip((page - 1) * limit).exec();
 
   const counting = await books.find().countDocuments();
-
-  res.render('books', { data: book, totalpage: Math.ceil(counting / limit), curruntpage: page, })
+  res.render('books', { data: book, totalpage: Math.ceil(counting / limit), curruntpage: page })
 }
 
 const CREATESTU = function (req, res) {
