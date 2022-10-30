@@ -1,12 +1,23 @@
 const books = require("../models/book");
 const fs = require("fs");
 
-const GETSTU = async function (req, res) {
 
-  // let searchdata = '';
-  // if (req.query.search) {
-  //   searchdata = req.query.search;
-  // }
+
+const SEARCH = async function (req, res) {
+
+  if (req.query.search) {
+
+    const book = await books.find({ $or: [{ title: { '$regex': req.query.search } }, { aname: { '$regex': req.query.search } }] }, (err, data) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render('pages/index', { data: data });
+      }
+    })
+  }
+}
+
+const GETSTU = async function (req, res) {
 
   let page = 1;
   if (req.query.page) {
@@ -61,6 +72,7 @@ const DELETE = async (req, res) => {
   res.redirect('/books');
 }
 module.exports = {
+  SEARCH,
   GETSTU,
   CREATESTU,
   CREATEPOST,
