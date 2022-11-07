@@ -1,19 +1,19 @@
 const books = require("../models/book");
 const fs = require("fs");
 
-const GETSTU = async function (req, res) {
+const limit = 3;
 
-  let page = 1;
+const GETSTU = async function (req, res) {
+  let page = 0;
   if (req.query.page) {
-    page = req.query.page;
+    page = parseInt(req.query.page);
+    page = page <= 0 ? 0 : page - 1;
   }
 
-  const limit = 3;
-
   const book = await books.find()
-    .limit(limit * 1).skip((page - 1) * limit).exec();
+    .limit(limit).skip(limit * page);
 
-  const counting = await books.find().countDocuments();
+  const counting = await books.find().count();
   res.render('books', { data: book, totalpage: Math.ceil(counting / limit), curruntpage: page })
 }
 

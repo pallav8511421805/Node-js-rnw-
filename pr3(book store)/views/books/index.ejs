@@ -57,11 +57,13 @@
     </section>
 
     <div class="row jsbdata2">
+        <a class="btnaction2 mgpage" href="/books?page=<%curruntpage +1%>">></a>
         <% 
         for(let c=1; c <= totalpage;c++){
-           %> <a class="btnaction2 mgpage" href="?page=<%= c %>"><%= c %></a> <%
+           %> <a class="btnaction2 mgpage" href="/books?page=<%= c %>"><%= c %></a> <%
         }
         %>
+        <a class="btnaction2 mgpage" href="/books?page=<%curruntpage -1%>">></a>
     </div>
 </body>
 </html>
