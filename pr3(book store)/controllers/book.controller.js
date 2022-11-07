@@ -12,13 +12,9 @@ const GETSTU = async function (req, res) {
   }
 
   const searchdata = {};
-  if (req.query && req.query['search']) {
-    searchdata['search'] = {
-      $or: [
-        { aname: { $regex: '.*' + req.query['search'] + '.*' } }
-      ]
-    };
-  }
+  if (req.query && req.query['aname']) {
+    searchdata['aname'] = { $regex: '.*' + req.query['aname'] + '.*' }
+  };
 
   const book = await books.find(searchdata)
     .limit(limit).skip(limit * page);
@@ -28,6 +24,7 @@ const GETSTU = async function (req, res) {
   const totalpages = Math.ceil(counting / limit);
 
   res.render('books', { data: book, totalpage: totalpages, curruntpage: page + 1, query: req.query })
+
 }
 
 const CREATESTU = function (req, res) {
