@@ -14,7 +14,9 @@ const GETSTU = async function (req, res) {
   const searchdata = {};
   if (req.query && req.query['search']) {
     searchdata['search'] = {
-
+      $or: [
+        { aname: { $regex: '.*' + req.query['search'] + '.*' } }
+      ]
     };
   }
 

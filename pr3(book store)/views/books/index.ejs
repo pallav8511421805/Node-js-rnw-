@@ -62,7 +62,7 @@
         <% 
         for(let c=1; c <= totalpage;c++){
             strquery.set('page',c)
-           %> <a class="btnaction2 mgpage" href="/books?page=<%= strquery.toString() %>"><%= c %></a> <%
+           %> <a class="btnaction2 mgpage" href="/books?<%= strquery.toString() %>"><%= c %></a> <%
         }
         %>
         <a class="btnaction2 mgpage" href="/books?page=<%curruntpage + 1%>"> > </a>
