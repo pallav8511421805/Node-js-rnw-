@@ -15,6 +15,4 @@ Route.post("/edit", upload.single("pname"), UPDATES);
 
 Route.get("/delete", DELETE)
 
-Route.get("/search", SEARCH)
-
 module.exports = Route;
