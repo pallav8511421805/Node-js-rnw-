@@ -57,13 +57,15 @@
     </section>
 
     <div class="row jsbdata2">
-        <a class="btnaction2 mgpage" href="/books?page=<%curruntpage +1%>">></a>
+        <% const strquery = new URLSearchParams(query) %>
+        <a class="btnaction2 mgpage" href="/books?page=<%curruntpage - 1%>"> < </a>
         <% 
         for(let c=1; c <= totalpage;c++){
-           %> <a class="btnaction2 mgpage" href="/books?page=<%= c %>"><%= c %></a> <%
+            strquery.set('page',c)
+           %> <a class="btnaction2 mgpage" href="/books?page=<%= strquery.toString() %>"><%= c %></a> <%
         }
         %>
-        <a class="btnaction2 mgpage" href="/books?page=<%curruntpage -1%>">></a>
+        <a class="btnaction2 mgpage" href="/books?page=<%curruntpage + 1%>"> > </a>
     </div>
 </body>
 </html>

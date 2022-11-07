@@ -1,20 +1,31 @@
 const books = require("../models/book");
 const fs = require("fs");
 
+
 const limit = 3;
 
 const GETSTU = async function (req, res) {
   let page = 0;
-  if (req.query.page) {
-    page = parseInt(req.query.page);
+  if (req.query && req.query['page']) {
+    page = parseInt(req.query['page']);
     page = page <= 0 ? 0 : page - 1;
   }
 
-  const book = await books.find()
+  const searchdata = {};
+  if (req.query && req.query['search']) {
+    searchdata['search'] = {
+
+    };
+  }
+
+  const book = await books.find(searchdata)
     .limit(limit).skip(limit * page);
 
-  const counting = await books.find().count();
-  res.render('books', { data: book, totalpage: Math.ceil(counting / limit), curruntpage: page })
+  const counting = await books.count(searchdata);
+
+  const totalpages = Math.ceil(counting / limit);
+
+  res.render('books', { data: book, totalpage: totalpages, curruntpage: page + 1, query: req.query })
 }
 
 const CREATESTU = function (req, res) {
