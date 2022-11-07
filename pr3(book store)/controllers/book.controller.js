@@ -13,7 +13,7 @@ const GETSTU = async function (req, res) {
 
   const searchdata = {};
   if (req.query && req.query['bookg']) {
-    searchdata['bookg'] = { $regex: '.*' + req.query['bookg'] + '.*' }
+    searchdata['bookg'] = { $regex: '.*' + req.query['bookg'] + '.*', $options: 'i' }
   };
 
   const book = await books.find(searchdata)
