@@ -21,7 +21,7 @@ const GETSTU = async function (req, res) {
     sort = req.query.sort;
   };
 
-  const booksort = await books.find().sort({ sort: -1 })
+  const booksort = await books.find().sort({ sort: -1 }).limit(limit).skip(limit * page)
 
   const book = await books.find(searchdata)
     .limit(limit).skip(limit * page);
