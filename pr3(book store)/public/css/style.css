@@ -372,3 +372,25 @@ border-radius: 5px;
 .acself{
   align-self: center;
 }
+
+.atag2data {
+  height: 40px !important;
+  line-height: 40px !important;
+  text-decoration: none !important;
+  color: white !important;
+  font-size: 20px !important;
+  padding: 0 25px;
+  background-color: crimson !important;
+  border: 2px solid crimson !important;
+  border-radius: 10px !important;
+  font-family: "Lexend", sans-serif !important;
+  margin: 25px 0 !important;
+  text-align: center !important;
+  text-transform: capitalize !important;
+}
+.mg10 {
+  margin:0 10px;
+}
+.ptagcolor{
+  color: white !important;
+}
