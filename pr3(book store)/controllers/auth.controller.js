@@ -21,7 +21,6 @@ class Authcontroller {
 
     async authdata(req, res) {
         const Authuser = await Auth.findOne(req.body)
-        console.log('Authuser : ', Authuser)
         res.redirect('/login')
     }
 }
