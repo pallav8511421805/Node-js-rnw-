@@ -323,8 +323,21 @@ input[type='radio']:checked:after {
   justify-content: space-between;
 }
 select {
+  width: 40% ;
   background-color:transparent;
   color:crimson;
+  font-family: 'jost';
+  text-indent: 25px;
+  font-size: 16px;
+  border-radius: 100px;
+  border: 2px solid crimson;
+}
+
+.select {
+  width: 84%;
+  background-color:white;
+  color:black !important;
+  padding:0 25px;
   font-family: 'jost';
   text-indent: 25px;
   font-size: 16px;
