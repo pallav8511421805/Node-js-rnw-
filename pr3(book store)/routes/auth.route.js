@@ -13,3 +13,5 @@ Route.post('/signup', Authentication.register);
 Route.get('/login', Authentication.login);
 
 Route.post('/login', Authentication.authdata);
+
+module.exports = Route;
