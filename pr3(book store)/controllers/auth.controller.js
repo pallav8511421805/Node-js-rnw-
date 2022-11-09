@@ -21,7 +21,12 @@ class Authcontroller {
 
     async authdata(req, res) {
         const Authuser = await Auth.findOne(req.body)
-        res.redirect('/login')
+        if (Authuser) {
+            const session = req.session;
+            session.userId = Authuser._id;
+            session.userName = Authuser.name;
+        }
+        res.redirect('/login?invalid=ture')
     }
 }
 
