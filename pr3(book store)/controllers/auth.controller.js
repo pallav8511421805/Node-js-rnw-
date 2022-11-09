@@ -21,7 +21,6 @@ class Authcontroller {
     }
 
     async authdata(req, res) {
-        console.log(req)
         const Authuser = await Auth.findOne(req.body)
         if (Authuser) {
             const session = req.session;
