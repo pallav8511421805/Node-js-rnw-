@@ -26,6 +26,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(appRoute)
 
+const oneday = 1000 * 60 * 60 * 24;
+
+app.use(session({
+    secret: 'this is secret key.',
+    cookie: { maxAge: oneday }
+}))
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}/`)
 })
