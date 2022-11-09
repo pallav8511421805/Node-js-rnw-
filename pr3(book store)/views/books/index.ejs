@@ -19,16 +19,16 @@
 
     <section>
         <div class="container">
-            <p class="acself mg10 ptagcolor">Sorting</p>
+            <p class="acself mg10 ptagcolor fsize">Sorting</p>
         <form class="mg acenter">
             <select name="sort" class="select">
                 <option value="">Select</option>
-                <option value="title">Title</option>
-                <option value="rate">Ratings</option>
-                <option value="aname">Author name</option>
-                <option value="date">date</option>
-                <option value="bookg">Category</option>
-                <option value="price">Price</option>
+                <option value="title" <%= query.sort === 'title' ? 'selected' :'' %> >Title</option>
+                <option value="rate" <%= query.sort === 'rate' ? 'selected' :'' %> >Ratings</option>
+                <option value="aname" <%= query.sort === 'aname' ? 'selected' :'' %> >Author name</option>
+                <option value="date" <%= query.sort === 'date' ? 'selected' :'' %> >date</option>
+                <option value="bookg" <%= query.sort === 'bookg' ? 'selected' :'' %> >Category</option>
+                <option value="price" <%= query.sort === 'price' ? 'selected' :'' %> >Price</option>
             </select>
             <button type="submit" class="btnsearch acself">Sorting</button>
         </form>

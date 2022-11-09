@@ -339,9 +339,20 @@ select {
   color:black !important;
   padding:0 25px;
   font-family: 'jost';
-  text-indent: 25px;
+  text-indent: 0px;
   font-size: 16px;
-  border-radius: 100px;
+  border-radius: 10px;
+  border: 2px solid crimson;
+}
+.select2 {
+  width: 25%;
+  background-color:white;
+  color:black !important;
+  padding:0 25px;
+  font-family: 'jost';
+  text-indent: 0px;
+  font-size: 16px;
+  border-radius: 10px;
   border: 2px solid crimson;
 }
 .jsbdata2{
@@ -406,4 +417,7 @@ border-radius: 5px;
 }
 .ptagcolor{
   color: white !important;
+}
+.fsize{
+  font-size: 36px;
 }
