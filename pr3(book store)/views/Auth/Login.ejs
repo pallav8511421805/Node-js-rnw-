@@ -23,12 +23,20 @@
                         </div>
                     </div>
 
+                    <% if(invalid){ %>
+                    %> <p style='color: red;font-size: 16px;'>Wrong email address.</p> <%
+                    <% } %>
+
                     <div class="divmg">
                         <label class="h2">Password</label>
                         <div class="center">
                             <input type="text" name="password" placeholder="Enter your password" class='input'/>
                         </div>
                     </div>
+
+                    <% if(invalid){ %>
+                        %> <p style='color: red;font-size: 16px;'>Wrong password.</p> <%
+                    <% } %>
 
                                 
                         <div class="center">

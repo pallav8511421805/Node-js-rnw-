@@ -28,7 +28,7 @@ class Authcontroller {
             session.userName = Authuser.name;
             res.redirect('/Profile')
         } else {
-            res.redirect('/login?invalid=ture')
+            res.redirect('/login?invalid=true')
         }
     }
 }
