@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const appRoute = require('./routes');
 const books = require('./models/book');
+const session = require('express-session');
 const port = 3000;
 
 mongoose.connect('mongodb://localhost:27017/store');
