@@ -16,17 +16,16 @@ const GETSTU = async function (req, res) {
     searchdata['bookg'] = { $regex: '.*' + req.query['bookg'] + '.*', $options: 'i' }
   };
 
-  let sort = null;
-  let ad_order = null;
-  if (req.query && req.query.sort && req.query.sortatoz) {
-    ad_order = req.query.sortatoz;
-    sort = req.query.sort;
-  };
+  let sortobj = null;
+  const ad_order = req.query.sortatoz;
+  const sortd = req.query.sort;
+  sortobj = req.query && sortd && ad_order ? { sortd: ad_order } : null;
+  console.log('sortobj', sortobj)
 
-  const book = await books.find(searchdata).sort({ aname: -1 })
+  const book = await books.find(searchdata).sort(sortobj)
     .limit(limit).skip(limit * page);
 
-  const counting = await books.count(searchdata).sort({ aname: -1 });
+  const counting = await books.count(searchdata).sort(sortobj);
 
   const totalpages = Math.ceil(counting / limit);
   res.render('books', { data: book, totalpage: totalpages, curruntpage: page + 1, query: req.query })
