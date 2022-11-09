@@ -16,11 +16,11 @@ const GETSTU = async function (req, res) {
     searchdata['bookg'] = { $regex: '.*' + req.query['bookg'] + '.*', $options: 'i' }
   };
 
-  let sortobj = null;
-  const ad_order = req.query.sortatoz;
-  const sortd = req.query.sort;
-  sortobj = req.query && sortd && ad_order ? { sortd: ad_order } : null;
-  console.log('sortobj', sortobj)
+  const sortobj = {};
+
+  if (req.query && req.query.sort && req.query.sortatoz) {
+    sortobj[req.query.sort] = req.query.sortatoz;
+  }
 
   const book = await books.find(searchdata).sort(sortobj)
     .limit(limit).skip(limit * page);
