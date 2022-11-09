@@ -16,7 +16,8 @@ class Authcontroller {
     }
 
     login(req, res) {
-        res.render('Auth/Login')
+        const { invalid } = req.query;
+        res.render('Auth/Login', { invalid })
     }
 
     async authdata(req, res) {
@@ -25,8 +26,10 @@ class Authcontroller {
             const session = req.session;
             session.userId = Authuser._id;
             session.userName = Authuser.name;
+            res.redirect('/Profile')
+        } else {
+            res.redirect('/login?invalid=ture')
         }
-        res.redirect('/login?invalid=ture')
     }
 }
 
