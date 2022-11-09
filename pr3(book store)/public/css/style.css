@@ -351,6 +351,7 @@ select {
   padding:0 25px;
   font-family: 'jost';
   text-indent: 0px;
+  margin: 10px 0;
   font-size: 16px;
   border-radius: 10px;
   border: 2px solid crimson;

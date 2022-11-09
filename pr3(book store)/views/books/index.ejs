@@ -21,6 +21,11 @@
         <div class="container">
             <p class="acself mg10 ptagcolor fsize">Sorting</p>
         <form class="mg acenter">
+            <select name="sortatoz" class="select2">
+                <option value="">Select</option>
+                <option value="1" <%= query.sortatoz === '1' ? 'selected' :'' %> >A to Z</option>
+                <option value="-1" <%= query.sortatoz === '-1' ? 'selected' :'' %> >Z to A</option>
+            </select>
             <select name="sort" class="select">
                 <option value="">Select</option>
                 <option value="title" <%= query.sort === 'title' ? 'selected' :'' %> >Title</option>
