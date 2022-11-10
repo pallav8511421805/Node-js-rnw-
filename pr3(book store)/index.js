@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const appRoute = require('./routes');
 const books = require('./models/book');
 const session = require('express-session');
+const cookieparser = require('cookie-parser');
 const port = 3000;
 
 mongoose.connect('mongodb://localhost:27017/store');
@@ -25,6 +26,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(appRoute)
+
+app.use(cookieparser())
 
 const oneday = 1000 * 60 * 60 * 24;
 
