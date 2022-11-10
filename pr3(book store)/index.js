@@ -25,7 +25,7 @@ app.use(express.static('public', options))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.use(appRoute)
+
 
 app.use(cookieparser())
 
@@ -35,6 +35,8 @@ app.use(session({
     secret: 'this is secret key.',
     cookie: { maxAge: oneday }
 }))
+
+app.use(appRoute)
 
 app.listen(port, () => {
     console.log(`http://localhost:${port}/`)
