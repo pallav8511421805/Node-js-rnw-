@@ -18,7 +18,6 @@ Route.use('/books', bookRoute)
 
 Route.use('/', (req, res, next) => {
     const session = req.session;
-    console.log("session", session)
     if (session.UName) {
         res.redirect('/Profile')
     } else {
