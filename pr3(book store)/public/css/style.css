@@ -290,8 +290,6 @@ input[type='radio']:checked:after {
   justify-content: space-between;
 }
 .dataimg{
-  width: 100px;
-  height: 100px;
   margin: 10px 0;
 }
 .rowdata {
