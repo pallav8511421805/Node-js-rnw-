@@ -39,7 +39,7 @@ const CREATESTU = function (req, res) {
 const CREATEPOST = async function (req, res) {
   const book = new books({ ...req.body, pname: req.file.filename })
   await book.save();
-  req.flash('serversuccess', 'New Book Inserted.')
+  req.flash('serversuccess', 'New Book Data Added Successfully.')
   res.redirect('/books')
 }
 
@@ -63,13 +63,13 @@ const UPDATES = async (req, res) => {
     fs.rm(__dirname + "/../public/uploads/" + old_img, () => {
     })
   }
-  req.flash('serversuccess', 'Book Data Updated.')
+  req.flash('serversuccess', 'Book Data Updated Successfully.')
   res.redirect('/books');
 }
 
 const DELETE = async (req, res) => {
   const result = await books.deleteOne({ _id: req.query.id });
-  req.flash('serversuccess', 'Book Data Deleted.')
+  req.flash('serversuccess', 'Book Data Deleted Successfully.')
   res.redirect('/books');
 }
 module.exports = {
