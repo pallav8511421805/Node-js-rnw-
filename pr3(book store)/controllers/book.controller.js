@@ -28,7 +28,7 @@ const GETSTU = async function (req, res) {
   const counting = await books.count(searchdata).sort(sortobj);
 
   const totalpages = Math.ceil(counting / limit);
-  res.render('books', { data: book, totalpage: totalpages, curruntpage: page + 1, query: req.query })
+  res.render('books', { data: book, totalpage: totalpages, curruntpage: page + 1, query: req.query, serversuccess: req.flash('serversuccess') })
 
 }
 
@@ -39,7 +39,7 @@ const CREATESTU = function (req, res) {
 const CREATEPOST = async function (req, res) {
   const book = new books({ ...req.body, pname: req.file.filename })
   await book.save();
-  req.flash('success', 'New Book Inserted.')
+  req.flash('serversuccess', 'New Book Inserted.')
   res.redirect('/books')
 }
 
@@ -63,13 +63,13 @@ const UPDATES = async (req, res) => {
     fs.rm(__dirname + "/../public/uploads/" + old_img, () => {
     })
   }
-  req.flash('success', 'Book Data Updated.')
+  req.flash('serversuccess', 'Book Data Updated.')
   res.redirect('/books');
 }
 
 const DELETE = async (req, res) => {
   const result = await books.deleteOne({ _id: req.query.id });
-  req.flash('success', 'Book Data Deleted.')
+  req.flash('serversuccess', 'Book Data Deleted.')
   res.redirect('/books');
 }
 module.exports = {
