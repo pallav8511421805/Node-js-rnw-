@@ -11,16 +11,6 @@
 
     <section>
         <div class="container">
-            <div class="row ">
-                <% if(serversuccess !== null) { %>
-                <p class="fsize"> <%= serversuccess %> </p>
-                <% } %>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
             <form class="mg acenter">
              <input type="text" placeholder="Search by Category" class="inputs acself" name="bookg" value="<%= query.bookg  ? query.bookg : '' %>" />
              <button type="submit" class="btnsearch acself">Search</button>
@@ -58,10 +48,13 @@
             </div>
         </div>
     </section>
-    
+    <% if(serversuccess !== null) { 
+        %> <p class="messagedata"><%= serversuccess %> </p> <%
+    } %>
     <section>
         <div class="container">
             <div class="row jsbdata">
+
                 <% if(data){ for(books of data) { %>
                 <div class="box5 mg2a">
                 <div class="w100">
