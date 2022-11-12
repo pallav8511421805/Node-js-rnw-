@@ -63,12 +63,13 @@ const UPDATES = async (req, res) => {
     fs.rm(__dirname + "/../public/uploads/" + old_img, () => {
     })
   }
-
+  req.flash('success', 'Book Data Updated.')
   res.redirect('/books');
 }
 
 const DELETE = async (req, res) => {
   const result = await books.deleteOne({ _id: req.query.id });
+  req.flash('success', 'Book Data Deleted.')
   res.redirect('/books');
 }
 module.exports = {
