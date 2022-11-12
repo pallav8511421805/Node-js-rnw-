@@ -34,7 +34,9 @@ const oneday = 1000 * 60 * 60 * 24;
 
 app.use(session({
     secret: 'this is secret key.',
-    cookie: { maxAge: oneday }
+    cookie: { maxAge: oneday },
+    saveUninitialized: false,
+    resave: false
 }))
 
 app.use(flash())
