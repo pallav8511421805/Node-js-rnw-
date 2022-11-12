@@ -6,7 +6,7 @@ const appRoute = require('./routes');
 const books = require('./models/book');
 const session = require('express-session');
 const cookieparser = require('cookie-parser');
-const connectflash = require('connect-flash');
+const flash = require('connect-flash');
 const port = 3000;
 
 mongoose.connect('mongodb://localhost:27017/store');
@@ -36,6 +36,8 @@ app.use(session({
     secret: 'this is secret key.',
     cookie: { maxAge: oneday }
 }))
+
+app.use(flash())
 
 app.use(appRoute)
 

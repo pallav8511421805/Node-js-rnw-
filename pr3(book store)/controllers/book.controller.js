@@ -39,6 +39,7 @@ const CREATESTU = function (req, res) {
 const CREATEPOST = async function (req, res) {
   const book = new books({ ...req.body, pname: req.file.filename })
   await book.save();
+  req.flash('success', 'New Book Inserted.')
   res.redirect('/books')
 }
 
