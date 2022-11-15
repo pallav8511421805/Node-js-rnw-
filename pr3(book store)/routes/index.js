@@ -4,6 +4,7 @@ const Route = express.Router();
 const bookRoute = require('./book.route')
 const authRoute = require('./auth.route')
 const profileRoute = require('./profile.route')
+const apiRoute = require('./api.route');
 
 Route.use('/Profile', (req, res, next) => {
     const session = req.session;
@@ -24,5 +25,7 @@ Route.use('/', (req, res, next) => {
         next();
     }
 }, authRoute)
+
+Route.use('/api', apiRoute)
 
 module.exports = Route;
