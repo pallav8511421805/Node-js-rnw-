@@ -15,7 +15,7 @@ Route.get('/verify', (req, res) => {
         console.log('token verify', jwt_verify);
         res.json({ message: 'verify email......' })
     } catch (e) {
-        console.log("error", e)
+        console.log("error", e.message)
         res.json({ error: e.message })
     }
 })
