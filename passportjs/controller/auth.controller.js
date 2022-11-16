@@ -14,6 +14,10 @@ class Authcontroller {
         await user.save()
         res.redirect('/')
     }
+
+    login(req, res) {
+        res.render('auth/login');
+    }
 }
 
 module.exports = Authcontroller;

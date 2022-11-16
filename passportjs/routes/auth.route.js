@@ -10,4 +10,6 @@ Route.get('/signup', Authentication.signup);
 
 Route.post('/signup', Authentication.register);
 
+Route.get('/login', Authentication.login)
+
 module.exports = Route;
