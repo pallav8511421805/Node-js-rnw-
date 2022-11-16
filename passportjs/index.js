@@ -28,6 +28,10 @@ app.use(session({
     cookie: { maxAge: oneday },
 }))
 
+app.get('/', (req, res) => {
+    res.render('profile/index');
+})
+
 app.use(appRoute)
 
 app.listen(port, () => {
