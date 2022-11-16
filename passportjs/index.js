@@ -35,5 +35,5 @@ app.get('/', (req, res) => {
 app.use(appRoute)
 
 app.listen(port, () => {
-    console.log(`server start on this server : ${port}`)
+    console.log(`server start on this server : http://localhost:${port}/`)
 })
