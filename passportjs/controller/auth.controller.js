@@ -12,7 +12,7 @@ class Authcontroller {
             ...req.body
         })
         await user.save()
-        res.redirect('/', { user })
+        res.redirect('/')
     }
 }
 
