@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cookieparser = require('cookie-parser');
 const session = require('express-session')
 const port = 3000;
 
