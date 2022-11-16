@@ -1,11 +1,11 @@
-const express = require('express')
+// const express = require('express')
 
-const profilecontroller = require('../controllers/profile.controller');
+// const profilecontroller = require('../controllers/profile.controller');
 
-const Route = express.Router();
+// const Route = express.Router();
 
-const profile = new profilecontroller();
+// const profile = new profilecontroller();
 
-Route.get('/', profile.getprofile);
+// Route.get('/', profile.getprofile);
 
-module.exports = Route;
+// module.exports = Route;

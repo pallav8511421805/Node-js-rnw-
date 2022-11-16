@@ -1,10 +1,10 @@
 
-class profilecontroller {
-    constructor() { }
+// class profilecontroller {
+//     constructor() { }
 
-    getprofile(req, res) {
-        res.render('profile');
-    }
-}
+//     getprofile(req, res) {
+//         res.render('profile');
+//     }
+// }
 
-module.exports = profilecontroller;
+// module.exports = profilecontroller;
