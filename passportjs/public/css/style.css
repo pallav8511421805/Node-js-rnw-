@@ -118,3 +118,23 @@ body{
     border-radius: 25px;
     padding: 10px 25px;
 }
+.btn1{
+    background-color: #ffffff;
+    color: #407BFF;
+    font-family: 'Cinzel', serif ;
+    border: none;
+    height: 40px;
+    font-weight: bold;
+    line-height: 23px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    padding: 10px 25px;
+}
+.homeh1 {
+    color: white;
+    font-family:'Cinzel', serif;
+    margin: 25px 0;
+    text-align: center;
+}
