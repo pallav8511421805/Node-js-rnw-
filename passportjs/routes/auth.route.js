@@ -12,8 +12,9 @@ Route.post('/signup', Authentication.register);
 
 Route.get('/login', Authentication.login)
 
-Route.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureMessage: true }),
+Route.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureMessage: true, }),
     function (req, res) {
+        console.log('req.user', req.user)
         res.redirect('/');
     });
 

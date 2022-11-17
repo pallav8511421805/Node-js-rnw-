@@ -4,10 +4,14 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cookieparser = require('cookie-parser');
 const appRoute = require('./routes');
-const session = require('express-session')
+const passport = require('passport');
+const session = require('express-session');
 const port = 3000;
 
 mongoose.connect('mongodb://localhost:27017/passport');
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.set("view engine", "ejs")
 
@@ -22,7 +26,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieparser())
 
 const oneday = 1000 * 60 * 60 * 24;
-
 app.use(session({
     secret: 'this is secret key.',
     cookie: { maxAge: oneday },
