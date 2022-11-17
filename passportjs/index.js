@@ -6,12 +6,15 @@ const cookieparser = require('cookie-parser');
 const appRoute = require('./routes');
 const passport = require('passport');
 const session = require('express-session');
+const strategy = require('./utils/Strategy');
 const port = 3000;
 
 mongoose.connect('mongodb://localhost:27017/passport');
 
 app.use(passport.initialize())
 app.use(passport.session())
+
+app.use(strategy)
 
 app.set("view engine", "ejs")
 
