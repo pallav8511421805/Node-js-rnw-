@@ -1,7 +1,7 @@
 const LocalStrategy = require('passport-local');
 const Auth = require('../models/auth');
 
-const strategy = new LocalStrategy(function verify(username, password, cb) {
+const strategy = new LocalStrategy((username, password, cb) => {
     Auth.findOne({
         username: username,
         password: password,
