@@ -29,7 +29,7 @@ app.use(session({
 }))
 
 app.get('/', (req, res) => {
-    res.render('profile/index');
+    res.render('index');
 })
 
 app.use(appRoute)
