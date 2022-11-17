@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cookieparser = require('cookie-parser');
 const appRoute = require('./routes');
 const passport = require('passport');
+const Auth = require('./models/auth');
 const session = require('express-session');
 const strategy = require('./utils/Strategy');
 const port = 3000;
@@ -14,7 +15,25 @@ mongoose.connect('mongodb://localhost:27017/passport');
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use(strategy)
+passport.use(strategy)
+
+passport.serializeUser((user, done) => {
+    if (user) {
+        return done(null, user.id)
+    } else {
+        return done(null, false)
+    }
+})
+
+passport.deserializeUser((id, done) => {
+    Auth.findById(id, (err, user) => {
+        if (err) {
+            return done(null, false)
+        } else {
+            return done(null, user)
+        }
+    })
+})
 
 app.set("view engine", "ejs")
 
