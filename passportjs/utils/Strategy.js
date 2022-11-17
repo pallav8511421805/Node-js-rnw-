@@ -7,7 +7,6 @@ const strategy = new LocalStrategy(function verify(username, password, cb) {
         password: password,
     })
         .then((Authuser) => {
-            console.log('Authuser', Authuser)
             if (Authuser) {
                 cb(null, Authuser)
             } else {
