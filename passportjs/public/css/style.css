@@ -139,11 +139,16 @@ body{
     border: none;
     height: 40px;
     text-decoration: none;
-    line-height: 23px;
+    line-height: 30px;
     text-align: center;
     font-size: 24px;
     border-radius: 25px;
     padding: 5px 25px;
+}
+.ptagtext {
+    color: black;
+    font-size: 18px;
+    margin: 2px 10px;
 }
 .homeh1 {
     color: white;
