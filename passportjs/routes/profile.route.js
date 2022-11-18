@@ -7,5 +7,7 @@ const profile = new profilecontroller();
 
 Route.get('/', profile.gethome);
 
+Route.get('/logout', profile.logout);
+
 
 module.exports = Route;
