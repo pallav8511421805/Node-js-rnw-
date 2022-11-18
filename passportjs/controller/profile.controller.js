@@ -3,7 +3,7 @@ class profilecontroller {
 
     gethome(req, res) {
         const user = req.user;
-        res.render('home', { user });
+        res.render('profile/home', { user });
     }
 
     logout(req, res) {
