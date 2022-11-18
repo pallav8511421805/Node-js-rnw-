@@ -132,6 +132,19 @@ body{
     text-decoration: none;
     padding: 10px 25px;
 }
+.btn2{
+    background-color: #407BFF;
+    color: white;
+    font-family: 'Cinzel', serif ;
+    border: none;
+    height: 40px;
+    text-decoration: none;
+    line-height: 23px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 25px;
+    padding: 5px 25px;
+}
 .homeh1 {
     color: white;
     font-family:'Cinzel', serif;
