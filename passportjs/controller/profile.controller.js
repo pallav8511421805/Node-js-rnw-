@@ -2,7 +2,7 @@ class profilecontroller {
     constructor() { }
 
     gethome(req, res) {
-        res.render('auth/login');
+        res.render('profile/home');
     }
 }
 module.exports = profilecontroller;
