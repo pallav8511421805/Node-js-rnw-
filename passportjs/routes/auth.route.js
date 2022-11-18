@@ -14,7 +14,7 @@ Route.get('/login', Authentication.login)
 
 Route.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureMessage: true, }),
     function (req, res) {
-        res.redirect('/');
+        res.redirect('profile/');
     });
 
 module.exports = Route;
