@@ -1,7 +1,7 @@
-class Dashboradcont {
+class Profilecont {
     index(req, res) {
         res.render('index')
     }
 }
 
-module.exports = Dashboradcont;
+module.exports = Profilecont;
