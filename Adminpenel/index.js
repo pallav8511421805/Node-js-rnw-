@@ -7,10 +7,11 @@ const path = require('path');
 
 app.set('view engine', 'ejs')
 
-app.set('views', [path.join(__dirname + '/src/Dashbroad', 'views')])
+app.set('views', [path.join(__dirname + '/src/Dashbroad', 'views'), path.join(__dirname, 'views')])
 app.use(express.static('public'))
 app.use(AppRouter)
 
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
+    console.log(__dirname);
 })
