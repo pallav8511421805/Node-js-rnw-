@@ -12,6 +12,8 @@ path.join(__dirname + '/src/auth', 'views'),
 path.join(__dirname + '/src', 'views')
 ])
 
+app.use(Body.json())
+app.use(Body.urlencoded({ extended: false }))
 app.set('view engine', 'ejs')
 
 app.use(AppRouter)
