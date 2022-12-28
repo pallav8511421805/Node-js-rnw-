@@ -1,6 +1,9 @@
 class Authcontroller {
-    index(req, res) {
+    login(req, res) {
         res.render('login')
+    }
+    forgetpassword(req, res) {
+        res.render('forgetpass')
     }
 }
 module.exports = Authcontroller;
