@@ -8,6 +8,7 @@ const path = require('path');
 app.use(express.static('public'))
 app.set('views', [path.join(__dirname + '/src/Dashbroad', 'views'),
 path.join(__dirname + '/src/Profile', 'views'),
+path.join(__dirname + '/src/auth', 'views'),
 path.join(__dirname + '/src', 'views')
 ])
 
