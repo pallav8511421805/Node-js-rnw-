@@ -6,11 +6,13 @@ const AppRouter = require('./Router');
 const path = require('path');
 
 app.use(express.static('public'))
+app.set('views', [path.join(__dirname + '/src/Dashbroad', 'views'),
+path.join(__dirname + '/src/Profile', 'views'),
+path.join(__dirname + '/src', 'views')
+])
+
 app.set('view engine', 'ejs')
 
-app.set('views', [path.join(__dirname + '/src/Dashbroad/views'),
-path.join(__dirname + '/src/profile/views'),
-path.join(__dirname + '/src/views'),])
 app.use(AppRouter)
 
 app.listen(port, () => {
