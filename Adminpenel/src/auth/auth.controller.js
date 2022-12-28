@@ -1,6 +1,7 @@
 class Authcontroller {
     login(req, res) {
-        res.render('login')
+        const { invalid } = req.query;
+        res.render('login', { invalid })
     }
     loginpost(req, res) {
         const { email, password } = req.body;
@@ -11,7 +12,7 @@ class Authcontroller {
         if (memail === email && mpass === password) {
             res.redirect('/')
         } else {
-            res.redirect('/auth/login')
+            res.redirect(`/auth/login?invalid=${true}`)
         }
     }
     forgetpassword(req, res) {
