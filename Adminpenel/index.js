@@ -4,6 +4,9 @@ const app = express();
 const port = 5000;
 const AppRouter = require('./Router');
 const path = require('path');
+const Mongodb = require('mongoose')
+
+Mongodb.connect('mongodb://localhost:27017/ADMINPANEL')
 
 app.use(express.static('public'))
 app.set('views', [path.join(__dirname + '/src/Dashbroad', 'views'),
