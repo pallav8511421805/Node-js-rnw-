@@ -6,4 +6,5 @@ Router.get('/login', authcontroller.login)
 Router.post('/login', authcontroller.loginpost)
 Router.get('/fp', authcontroller.forgetpassword)
 Router.get('/signup', authcontroller.signup)
+Router.post('/signup', authcontroller.Resgister)
 module.exports = Router;
