@@ -6,7 +6,9 @@
       </div>
       <div class="card-body">
         <p class="login-box-msg">Register a new membership</p>
-  
+        <%if(exits === 'true'){%>
+          <p>Already user Exists.</p>
+        <%}%>
         <form method="post">
           <div class="input-group mb-3">
             <input type="text" class="form-control"  name="name" placeholder="Full name">

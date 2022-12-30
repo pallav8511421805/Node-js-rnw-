@@ -20,15 +20,33 @@ class Authcontroller {
     forgetpassword(req, res) {
         res.render('forgetpass')
     }
-    signup(req, res) {
-        res.render('signup')
+    Changepassword(req, res) {
+        res.render('Change')
     }
-    async Resgister(req, res) {
-        const data = req.body;
-        const Authdata = new Auth(data)
-        await Authdata.save().then((respo) => {
+    async Change_password(req, res) {
+        const { email, password } = req.body;
+        await Auth.updateOne({ email }, { $set: { password: password } }).then((respo) => {
             if (respo) {
-                res.redirect('/auth/login')
+                res.redirect('/')
+            }
+        })
+    }
+    signup(req, res) {
+        const { exits } = req.query;
+        res.render('signup', { exits })
+    }
+    Resgister(req, res) {
+        const getdata = Auth.findOne(req.body).then(async (respo) => {
+            if (respo) {
+                res.redirect(`/auth/signup?exits=${true}`)
+            } else {
+                const data = req.body;
+                const Authdata = new Auth(data)
+                await Authdata.save().then((respo) => {
+                    if (respo) {
+                        res.redirect('/auth/login')
+                    }
+                })
             }
         })
     }
