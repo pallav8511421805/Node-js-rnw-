@@ -8,28 +8,39 @@ class Authcontroller {
     async loginpost(req, res) {
         const Session = req.session;
         const { email, password } = req.body;
-        const getdata = await Auth.findOne(req.body).then((responsce) => {
-            if (responsce.email === email && responsce.password === password) {
-                Session.email = responsce.email;
-                res.redirect('/')
-            } else {
-                res.redirect(`/auth/login?invalid=${true}`)
-            }
-        });
+        const getdata = await Auth.findOne({ email, password })
+
+        if (getdata) {
+            Session.email = email;
+            res.redirect('/')
+        } else {
+            res.redirect(`/auth/login?invalid=${true}`)
+        }
     }
     forgetpassword(req, res) {
         res.render('forgetpass')
+    }
+
+    async forgetpasswordpost(req, res) {
+        const { email } = req.body;
+        console.log(email)
     }
     Changepassword(req, res) {
         res.render('Change')
     }
     async Change_password(req, res) {
         const { email, password } = req.body;
-        await Auth.updateOne({ email }, { $set: { password: password } }).then((respo) => {
-            if (respo) {
-                res.redirect('/')
-            }
-        })
+        const findlogin = await Auth.findOne({ email })
+
+        if (findlogin) {
+            await Auth.updateOne({ email }, { $set: { password: password } }).then((respo) => {
+                if (respo) {
+                    res.redirect('/')
+                }
+            })
+        } else {
+            res.redirect('/auth/login')
+        }
     }
     signup(req, res) {
         const { exits } = req.query;
