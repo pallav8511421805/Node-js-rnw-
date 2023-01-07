@@ -1,7 +1,13 @@
 const Mongodb = require('mongoose')
 const Category = Mongodb.model('categories', {
-    name: String,
-    parent_id: String,
+    name: {
+        type: String,
+        default: null
+    },
+    parent_id: {
+        type: String,
+        default: null
+    },
 })
 
 module.exports = Category;
