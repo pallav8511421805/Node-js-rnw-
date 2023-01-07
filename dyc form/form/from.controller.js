@@ -6,7 +6,11 @@ const Getform = async (req, res) => {
     res.render('form', { parentdata })
 }
 const Postform = async (req, res) => {
-    const category = new Category({ ...req.body })
+    const { name, parent_id } = req.body;
+    const category = new Category({
+        name: name,
+        parent_id: parent_id
+    })
     category.save()
     res.redirect('/')
 }
