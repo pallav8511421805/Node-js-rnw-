@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <form class="formclass" method="post">
+                <div class="mg">
+                    <h1 class="h1data">Category Form</h1>
+                </div>
+                <div class="mg">
+                    <label class="label">Category Name</label>
+                <input type="text" placeholder="Enter Category Name" name="name" class="inputclass"/>
+                </div>
+                <div class="mg">
+                    <select class="select" name="parent_id">
+                        <option class="option" value='<%= null%>'>
+                            Select Category
+                        </option>
+                        <% for(let i of parentdata){%>
+                            <option value="<%=i._id%>" class="option"><%=i.name%></option>
+                            <%}%>
+                    </select>
+                </div>
+                <div class="mg">
+                    <button class="btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

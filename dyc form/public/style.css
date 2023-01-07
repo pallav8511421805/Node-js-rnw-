@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+body{
+    font-family: 'poppins';
+    background-color: crimson;
+}
+.container {
+    max-width: 1320px;
+    margin: auto;
+}
+.inputclass {
+    width: 100%;
+    height: 40px;
+    text-indent: 15px;
+    font-size: 14px;
+    border:2px solid crimson;
+    border-radius: 15px;
+}
+.formclass {
+    width: 50%;
+    background-color: transparent;
+    padding: 25px;
+    border-radius: 15px;
+    background-color: white;
+    margin: 100px auto;
+}
+.formclass ::placeholder{
+    color: crimson;
+    font-size: 14px;
+font-family: 'poppins';
+}
+.label{
+    font-weight: 500;
+    font-size: 24px;
+    padding: 10px;
+    color: crimson;
+    font-family: 'poppins';
+}
+.mg{
+    margin: 10px 0;
+}
+.btn{
+    color: white;
+    width: 250px;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'poppins';
+    border:2px solid crimson ;
+    border-radius: 15px;
+    transition: all 0.5s;
+    background-color: crimson;
+}
+.btn:hover{
+    background-color: transparent;
+    color: crimson;
+}
+.h1data {
+    color: crimson;
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center;
+}
+.select {
+    width: 100%;
+    background-color: crimson;
+    color: white;
+    height: 40px;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-family: 'poppins';
+    text-indent: 15px;
+}
+.option {
+    width: 100%;
+    background-color: white;
+    color: crimson;
+    height: 40px;
+    border:none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-family: 'poppins';
+    text-indent: 15px;
+}
