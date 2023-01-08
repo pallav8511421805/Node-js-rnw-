@@ -3,7 +3,7 @@ const Category = require('../form/form.model')
 
 const Getform = async (req, res) => {
     const getdata = await Category.find()
-    const parentdata = getdata.filter((x) => x.parent_id === '');
+    const parentdata = getdata.filter((x) => x.parent_id === null);
     res.render('form', { parentdata })
 }
 const Postform = async (req, res) => {
