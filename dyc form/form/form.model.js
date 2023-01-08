@@ -1,14 +1,8 @@
-const Mongodb = require('mongoose')
-const Category_Schema = new Mongodb.Schema({
-    name: {
-        type: String,
-        default: null
-    },
-    parent_id: {
-        type: String,
-        default: null
-    },
-})
-const Category = Mongodb.model('categories', Category_Schema)
+const mongoose = require('mongoose');
+const main_srcam = {
+    name: String,
+    parent_id: null | mongoose.Schema.Types.ObjectId
+};
+const Category = mongoose.model('categories', main_srcam)
 
 module.exports = Category;
